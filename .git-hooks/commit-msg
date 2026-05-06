@@ -1,0 +1,6 @@
+#!/bin/sh
+COMMIT_FILE=$(git rev-parse --git-dir)/COMMIT_EDITMSG
+npx commitlint --edit "$COMMIT_FILE" || {
+  echo "Commitlint validation failed!" >&2
+  exit 1
+}
