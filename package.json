@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "style": "dist/style.css",
+  "style": "dist/index.css",
   "files": [
     "dist"
   ],
@@ -14,7 +14,7 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/index.css"
   },
   "scripts": {
     "build": "tsc -b && vite build",
@@ -39,10 +39,12 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.2.4",
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3",
     "vite": "^8.0.10",
     "vite-plugin-dts": "^4.5.4"
