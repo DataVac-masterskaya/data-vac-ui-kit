@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Цвета — светлая тема */
-  --color-primary: #E30C5C;
-  --color-primary-hover: #B40A49;
+  --color-primary: #e30c5c;
+  --color-primary-hover: #b40a49;
   --color-text: #323335;
   --color-text-muted: #868686;
-  --color-text-subtle: #A6A6A6;
-  --color-surface: #F3F3F3;
-  --color-bg: #FFFFFF;
-  --color-dark-btn: #4F5153;
-  --color-border: #E4E4E4;
-  --color-link: #E30C5C;
+  --color-text-subtle: #a6a6a6;
+  --color-surface: #f3f3f3;
+  --color-bg: #ffffff;
+  --color-dark-btn: #4f5153;
+  --color-border: #e4e4e4;
+  --color-link: #e30c5c;
 
   /* Типографика */
   --font-sans: 'Inter Tight', sans-serif;
@@ -30,9 +30,9 @@
 /* Тёмная тема — значения уточняются по Figma dark mode */
 .dark {
   --color-bg: #1a1a1a;
-  --color-text: #F3F3F3;
+  --color-text: #f3f3f3;
   --color-surface: #2a2a2a;
-  --color-text-muted: #A6A6A6;
+  --color-text-muted: #a6a6a6;
   --color-text-subtle: #686868;
   --color-border: #3a3a3a;
 }
