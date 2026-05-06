@@ -10,3 +10,5 @@ export { Input, SearchBar } from './components/Input'
 export { Badge, Chip, Counter } from './components/Badge'
 
 export { Spinner, Skeleton } from './components/Spinner'
+
+export { ThemeToggle } from './components/ThemeToggle'
