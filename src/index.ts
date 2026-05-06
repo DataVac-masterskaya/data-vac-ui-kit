@@ -14,3 +14,5 @@ export { Spinner, Skeleton } from './components/Spinner'
 export { ThemeToggle } from './components/ThemeToggle'
 
 export { Tooltip } from './components/Tooltip'
+
+export { Accordion, AccordionItem } from './components/Accordion'
