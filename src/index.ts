@@ -1,4 +1,4 @@
 import './tailwind.css'
 
-// Components will be exported here
-export {}
+export { Button } from './components/Button'
+export type { ButtonProps } from './components/Button'
