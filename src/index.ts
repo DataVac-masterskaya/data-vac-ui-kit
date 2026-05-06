@@ -16,3 +16,5 @@ export { ThemeToggle } from './components/ThemeToggle'
 export { Tooltip } from './components/Tooltip'
 
 export { Accordion, AccordionItem } from './components/Accordion'
+
+export { Drawer } from './components/Drawer'
