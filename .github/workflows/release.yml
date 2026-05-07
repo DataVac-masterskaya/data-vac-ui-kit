@@ -46,6 +46,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     if: github.event_name == 'push' || github.event_name == 'pull_request'
+    env:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,10 +66,10 @@ jobs:
           path: storybook-static/
 
       - uses: chromaui/action@latest
+        if: ${{ env.CHROMATIC_PROJECT_TOKEN != '' }}
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: storybook-static
-          # Don't block CI if Chromatic token isn't set yet
           exitZeroOnChanges: true
           exitOnceUploaded: true
 
