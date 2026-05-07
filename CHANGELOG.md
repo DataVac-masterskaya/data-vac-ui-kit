@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.0...v1.0.1) (2026-05-07)
+
+
+### Bug Fixes
+
+* move test/storybook deps to devDependencies, remove unused react-popover ([518e4c8](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/518e4c876650bf210491cacd443af06bc7e4af4d))
+
 # 1.0.0 (2026-05-07)
 
 
