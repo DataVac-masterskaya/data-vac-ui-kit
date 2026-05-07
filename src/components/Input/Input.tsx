@@ -11,9 +11,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     <input
       ref={ref}
       className={cn(
-        'w-full h-14 px-5 rounded-input font-sans text-base text-text placeholder:text-text-muted outline-none transition-colors',
-        variant === 'white' && 'bg-bg border border-border focus:border-primary',
-        variant === 'grey' && 'bg-surface border-transparent focus:border-primary',
+        'w-full h-14 px-5 rounded-input font-sans text-base text-fg placeholder:text-fg-secondary outline-none transition-colors',
+        variant === 'white' && 'bg-card border border-border focus:border-accent',
+        variant === 'grey' && 'bg-subtle border-transparent focus:border-accent',
         className,
       )}
       {...props}
@@ -37,7 +37,7 @@ export const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
       <input
         ref={ref}
         className={cn(
-          'w-full h-12 pl-12 pr-4 bg-bg rounded-card font-sans text-sm text-text placeholder:text-text-subtle outline-none',
+          'w-full h-12 pl-12 pr-4 bg-card rounded-card font-sans text-sm text-fg placeholder:text-fg-muted outline-none',
         )}
         {...props}
       />

@@ -1,0 +1,28 @@
+[
+  { "path": "colors.accent", "cssVar": "--color-accent" },
+  { "path": "colors.accentHover", "cssVar": "--color-accent-hover" },
+
+  { "path": "colors.fg", "cssVar": "--color-fg" },
+  { "path": "colors.fgSecondary", "cssVar": "--color-fg-secondary" },
+  { "path": "colors.fgMuted", "cssVar": "--color-fg-muted" },
+
+  { "path": "colors.page", "cssVar": "--color-page" },
+  { "path": "colors.card", "cssVar": "--color-card" },
+  { "path": "colors.subtle", "cssVar": "--color-subtle" },
+  { "path": "colors.interactive", "cssVar": "--color-interactive" },
+  { "path": "colors.overlay", "cssVar": "--color-overlay" },
+  { "path": "colors.neutral", "cssVar": "--color-neutral" },
+
+  { "path": "colors.border", "cssVar": "--color-border" },
+  { "path": "colors.link", "cssVar": "--color-link" },
+
+  { "path": "radius.tooltip", "cssVar": "--radius-tooltip" },
+  { "path": "radius.icon", "cssVar": "--radius-icon" },
+  { "path": "radius.sm", "cssVar": "--radius-sm" },
+  { "path": "radius.input", "cssVar": "--radius-input" },
+  { "path": "radius.card", "cssVar": "--radius-card" },
+  { "path": "radius.pill", "cssVar": "--radius-pill" },
+  { "path": "radius.button", "cssVar": "--radius-button" },
+
+  { "path": "font.sans", "cssVar": "--font-sans" }
+]

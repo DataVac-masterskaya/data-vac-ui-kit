@@ -18,7 +18,7 @@ describe('Input', () => {
 
   it('renders grey variant', () => {
     const { container } = render(<Input variant="grey" placeholder="test" />)
-    expect(container.firstChild).toHaveClass('bg-surface')
+    expect(container.firstChild).toHaveClass('bg-subtle')
   })
 })
 

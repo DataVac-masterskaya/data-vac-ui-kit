@@ -8,11 +8,11 @@ export function Spinner({ className }: { className?: string }) {
       aria-label="Загрузка"
       className={cn('flex items-center justify-center', className)}
     >
-      <div className="w-6 h-6 rounded-full border-2 border-surface border-t-primary animate-spin" />
+      <div className="w-6 h-6 rounded-full border-2 border-subtle border-t-accent animate-spin" />
     </div>
   )
 }
 
 export function Skeleton({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('rounded-input bg-surface animate-pulse', className)} {...props} />
+  return <div className={cn('rounded-input bg-subtle animate-pulse', className)} {...props} />
 }

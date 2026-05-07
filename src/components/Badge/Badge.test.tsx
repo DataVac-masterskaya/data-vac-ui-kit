@@ -20,7 +20,7 @@ describe('Chip', () => {
 
   it('renders selected state', () => {
     const { container } = render(<Chip selected>Выбран</Chip>)
-    expect(container.firstChild).toHaveClass('bg-primary')
+    expect(container.firstChild).toHaveClass('bg-accent')
   })
 })
 

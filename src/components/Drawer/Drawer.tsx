@@ -17,19 +17,30 @@ export function Drawer({ trigger, title, children, className }: DrawerProps) {
         <VaulDrawer.Overlay className="fixed inset-0 bg-black/20 backdrop-blur-[2px] z-40" />
         <VaulDrawer.Content
           className={cn(
-            'fixed right-0 top-0 bottom-0 z-50 flex flex-col bg-bg w-[464px] pt-16 pb-10 px-8 overflow-y-auto',
+            'fixed right-0 top-0 bottom-0 z-50 flex flex-col bg-card w-[464px] pt-16 pb-10 px-8 overflow-y-auto overflow-x-hidden',
             className,
           )}
         >
-          <VaulDrawer.Title className="font-semibold text-lg text-text font-sans mb-5">
+          <VaulDrawer.Title className="font-semibold text-lg text-fg font-sans mb-5">
             {title}
           </VaulDrawer.Title>
-          <div className="font-sans text-base text-text leading-5 flex-1">{children}</div>
+          <div className="font-sans text-base text-fg leading-5 flex-1">{children}</div>
           <VaulDrawer.Close
             aria-label="Закрыть"
-            className="absolute top-4 right-4 p-2 rounded-full bg-primary-hover text-white"
+            className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-accent hover:bg-accent-hover transition-colors text-white"
           >
-            ✕
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
           </VaulDrawer.Close>
         </VaulDrawer.Content>
       </VaulDrawer.Portal>

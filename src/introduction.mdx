@@ -1,0 +1,71 @@
+{/* introduction.mdx */}
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Документация/Введение" />
+
+# @datavac/ui-kit
+
+UI-кит для проекта DataVac — набор готовых React-компонентов с поддержкой светлой и тёмной темы.
+
+## Установка
+
+```sh
+npm install @datavac/ui-kit
+```
+
+Подключи стили в корне приложения:
+
+```tsx
+import '@datavac/ui-kit/style.css'
+```
+
+## Использование
+
+```tsx
+import { Button, Badge, Drawer, ThemeToggle } from '@datavac/ui-kit'
+
+export function App() {
+  return (
+    <>
+      <ThemeToggle />
+      <Button variant="primary">Записаться на вакцинацию</Button>
+      <Badge>Дифтерия</Badge>
+    </>
+  )
+}
+```
+
+## Темизация
+
+Библиотека использует CSS-переменные для токенов. По умолчанию — светлая тема.
+Тёмная тема активируется классом `dark` на `<html>`:
+
+```ts
+document.documentElement.classList.add('dark')
+```
+
+Компонент `ThemeToggle` управляет этим автоматически.
+
+## Иконки
+
+SVG-иконки генерируются из `src/icons/raw/` скриптом и экспортируются как React-компоненты:
+
+```tsx
+import { SunIcon, MoonStarsIcon, PlusIcon } from '@datavac/ui-kit'
+
+;<SunIcon width={20} height={20} className="text-accent" />
+```
+
+Чтобы добавить новую иконку — положи `.svg` файл в `src/icons/raw/` и запусти:
+
+```sh
+npm run icons:generate
+```
+
+## Pre-release версии (фичи-ветки)
+
+При пуше в ветку `feat/my-feature` публикуется pre-release версия:
+
+```sh
+npm install @datavac/ui-kit@my-feature
+```

@@ -1,0 +1,32 @@
+{
+  "colors": {
+    "accent": "#E30C5C",
+    "accentHover": "#B40A49",
+
+    "fg": "#323335",
+    "fgSecondary": "#868686",
+    "fgMuted": "#A6A6A6",
+
+    "page": "#F3F3F3",
+    "card": "#FFFFFF",
+    "subtle": "#F3F3F3",
+    "interactive": "#FFFFFF",
+    "overlay": "rgba(243, 243, 243, 0.7)",
+    "neutral": "#4F5153",
+
+    "border": "#E4E4E4",
+    "link": "#E30C5C"
+  },
+  "radius": {
+    "tooltip": "4px",
+    "icon": "6px",
+    "sm": "8px",
+    "input": "12px",
+    "card": "16px",
+    "pill": "32px",
+    "button": "40px"
+  },
+  "font": {
+    "sans": "'Inter Tight', sans-serif"
+  }
+}

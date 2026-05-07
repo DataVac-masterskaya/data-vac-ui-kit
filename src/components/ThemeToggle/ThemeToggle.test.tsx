@@ -12,10 +12,10 @@ describe('ThemeToggle', () => {
 
   it('toggles dark class on html element when clicked', async () => {
     render(<ThemeToggle />)
-    const toggle = screen.getByRole('switch')
-    await userEvent.click(toggle)
+    const [desktopToggle] = screen.getAllByRole('switch')
+    await userEvent.click(desktopToggle)
     expect(document.documentElement.classList.contains('dark')).toBe(true)
-    await userEvent.click(toggle)
+    await userEvent.click(desktopToggle)
     expect(document.documentElement.classList.contains('dark')).toBe(false)
   })
 })

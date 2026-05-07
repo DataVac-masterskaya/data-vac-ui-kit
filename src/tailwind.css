@@ -1,21 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap');
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('./fonts/InterTight-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import 'tailwindcss';
 
-@theme {
-  /* Цвета — светлая тема */
-  --color-primary: #e30c5c;
-  --color-primary-hover: #b40a49;
-  --color-text: #323335;
-  --color-text-muted: #868686;
-  --color-text-subtle: #a6a6a6;
-  --color-surface: #f3f3f3;
-  --color-bg: #ffffff;
-  --color-dark-btn: #4f5153;
-  --color-border: #e4e4e4;
-  --color-link: #e30c5c;
+/* ==========================================================================
+   GENERATED FILE — не редактировать вручную!
+   Источники: src/themes/default.json, dark.json, vars-map.json
+   Обновить:  npm run theme:generate
+   ========================================================================== */
 
+@theme {
   /* Типографика */
   --font-sans: 'Inter Tight', sans-serif;
+
+  /* Цвета */
+  --color-accent: #e30c5c;
+  --color-accent-hover: #b40a49;
+  --color-fg: #323335;
+  --color-fg-secondary: #868686;
+  --color-fg-muted: #a6a6a6;
+  --color-page: #f3f3f3;
+  --color-card: #ffffff;
+  --color-subtle: #f3f3f3;
+  --color-interactive: #ffffff;
+  --color-overlay: rgba(243, 243, 243, 0.7);
+  --color-neutral: #4f5153;
+  --color-border: #e4e4e4;
+  --color-link: #e30c5c;
 
   /* Border radius */
   --radius-tooltip: 4px;
@@ -27,12 +43,17 @@
   --radius-button: 40px;
 }
 
-/* Тёмная тема — значения уточняются по Figma dark mode */
+/* Тёмная тема — только значения, отличающиеся от светлой */
 .dark {
-  --color-bg: #1a1a1a;
-  --color-text: #f3f3f3;
-  --color-surface: #2a2a2a;
-  --color-text-muted: #a6a6a6;
-  --color-text-subtle: #686868;
+  --color-accent: #f31667;
+  --color-fg: #f3f3f3;
+  --color-fg-secondary: #a6a6a6;
+  --color-fg-muted: #868686;
+  --color-page: #1c1e20;
+  --color-card: #26282b;
+  --color-subtle: #323335;
+  --color-interactive: #323335;
+  --color-overlay: rgba(28, 30, 32, 0.7);
   --color-border: #3a3a3a;
+  --color-link: #f31667;
 }

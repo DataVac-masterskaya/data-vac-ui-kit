@@ -6,7 +6,7 @@ export function Badge({ className, ...props }: HTMLAttributes<HTMLSpanElement>) 
   return (
     <span
       className={cn(
-        'inline-flex items-center px-2 py-0.5 rounded-pill text-xs font-medium bg-surface text-text-muted',
+        'inline-flex items-center px-2 py-0.5 rounded-pill text-xs font-medium bg-subtle text-fg-secondary',
         className,
       )}
       {...props}
@@ -25,7 +25,7 @@ export function Chip({ selected, className, ...props }: ChipProps) {
       type="button"
       className={cn(
         'inline-flex items-center px-3 py-1 rounded-pill text-sm font-medium transition-colors',
-        selected ? 'bg-primary text-white' : 'bg-surface text-text hover:bg-primary/10',
+        selected ? 'bg-accent text-white' : 'bg-subtle text-fg hover:bg-accent/10',
         className,
       )}
       {...props}
@@ -42,7 +42,7 @@ export function Counter({ count, className, ...props }: CounterProps) {
   return (
     <span
       className={cn(
-        'inline-flex items-center px-1 py-px rounded-pill bg-surface text-primary text-xs',
+        'inline-flex items-center px-1 py-px rounded-pill bg-subtle text-accent text-xs',
         className,
       )}
       {...props}

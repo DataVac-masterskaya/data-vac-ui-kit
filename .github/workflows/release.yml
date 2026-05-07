@@ -1,12 +1,88 @@
-name: Release
+name: CI / Release
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - 'feat/**'
+      - 'feature/**'
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
-  release:
+  # ── Runs on every push and PR ───────────────────────────────────────────────
+  test:
+    name: Build & Test
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      # Unit tests (jsdom)
+      - run: npm test
+
+      # Storybook interaction + a11y tests (headless Chromium)
+      - run: npx playwright install chromium --with-deps
+      - run: npm run test:storybook
+
+      # Upload built Storybook as artifact for Chromatic
+      - run: npm run build-storybook
+      - uses: actions/upload-artifact@v4
+        with:
+          name: storybook-static
+          path: storybook-static/
+          retention-days: 1
+
+  # ── Visual regression tests via Chromatic ───────────────────────────────────
+  chromatic:
+    name: Visual Tests (Chromatic)
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Chromatic needs full git history for diff baseline
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: storybook-static
+          path: storybook-static/
+
+      - uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook-static
+          # Don't block CI if Chromatic token isn't set yet
+          exitZeroOnChanges: true
+          exitOnceUploaded: true
+
+  # ── Runs only on direct pushes (not PRs) to release branches ───────────────
+  release:
+    name: Publish
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    permissions:
+      contents: write      # push changelog/version commits back
+      issues: write        # comment on issues when releasing
+      pull-requests: write # comment on PRs when releasing
+      id-token: write      # OIDC for npm provenance
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,13 +92,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: https://registry.npmjs.org
+          cache: npm
 
       - run: npm ci
-
       - run: npm run build
-
-      - run: npm test
 
       - run: npx semantic-release
         env:

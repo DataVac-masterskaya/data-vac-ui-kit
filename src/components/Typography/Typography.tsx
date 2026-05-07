@@ -14,9 +14,7 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
       lg: 'text-lg font-semibold leading-snug',
       md: 'text-base font-semibold leading-snug',
     }
-    return (
-      <Tag ref={ref} className={cn('font-sans text-text', sizes[size], className)} {...props} />
-    )
+    return <Tag ref={ref} className={cn('font-sans text-fg', sizes[size], className)} {...props} />
   },
 )
 Heading.displayName = 'Heading'
@@ -29,7 +27,7 @@ interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
 export const Text = forwardRef<HTMLParagraphElement, TextProps>(
   ({ size = 'md', className, ...props }, ref) => {
     const sizes = { md: 'text-base leading-5', sm: 'text-sm leading-tight' }
-    return <p ref={ref} className={cn('font-sans text-text', sizes[size], className)} {...props} />
+    return <p ref={ref} className={cn('font-sans text-fg', sizes[size], className)} {...props} />
   },
 )
 Text.displayName = 'Text'
@@ -39,7 +37,7 @@ export const Label = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagra
   ({ className, ...props }, ref) => (
     <p
       ref={ref}
-      className={cn('font-sans text-xs text-text-muted leading-tight', className)}
+      className={cn('font-sans text-xs text-fg-muted leading-tight', className)}
       {...props}
     />
   ),
@@ -51,7 +49,7 @@ export const Caption = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParag
   ({ className, ...props }, ref) => (
     <p
       ref={ref}
-      className={cn('font-sans text-[10px] text-text-muted leading-tight', className)}
+      className={cn('font-sans text-[10px] text-fg-muted leading-tight', className)}
       {...props}
     />
   ),

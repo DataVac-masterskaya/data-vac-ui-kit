@@ -24,6 +24,6 @@ describe('Button', () => {
   it('renders dark variant', () => {
     render(<Button variant="dark">Нажми</Button>)
     const btn = screen.getByRole('button')
-    expect(btn.className).toMatch(/dark/)
+    expect(btn.className).toMatch(/bg-neutral/)
   })
 })
