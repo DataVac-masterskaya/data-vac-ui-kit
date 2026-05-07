@@ -29,7 +29,8 @@
     "test:storybook": "vitest run --project storybook",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "git config core.hooksPath .git-hooks || echo 'Not in a git repo'"
+    "prepare": "git config core.hooksPath .git-hooks || echo 'Not in a git repo'",
+    "chromatic": "npx chromatic"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
