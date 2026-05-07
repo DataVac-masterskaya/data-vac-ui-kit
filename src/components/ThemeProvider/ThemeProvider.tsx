@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react'
-import { defaultTheme, themes, tokensToCssVars } from '../../themes'
+import { defaultTheme, themes } from '../../themes'
 import type { ThemeName, ThemeTokens } from '../../themes'
 
 interface ThemeContextValue {
@@ -45,20 +45,12 @@ export function ThemeProvider({
 
   const tokens = allThemes[themeName] ?? defaultTheme
 
-  const applyVars = useCallback(
-    (vars: Record<string, string>) => {
-      const target = applyToRoot ? document.documentElement : null
-      if (!target) return
-      Object.entries(vars).forEach(([k, v]) => target.style.setProperty(k, v))
-      target.classList.toggle('dark', themeName === 'dark')
-    },
-    [applyToRoot, themeName],
-  )
-
   useEffect(() => {
-    applyVars(tokensToCssVars(tokens))
+    if (applyToRoot) {
+      document.documentElement.classList.toggle('dark', themeName === 'dark')
+    }
     localStorage.setItem('datavac-theme', themeName)
-  }, [tokens, themeName, applyVars])
+  }, [themeName, applyToRoot])
 
   const setTheme = useCallback(
     (name: ThemeName) => {
