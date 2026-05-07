@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.3...v1.0.4) (2026-05-07)
+
+
+### Bug Fixes
+
+* replace inline CSS variable injection with class-based dark mode toggle ([633e141](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/633e141a361749986edac3c279e270bee7d5181b))
+
 ## [1.0.3](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.2...v1.0.3) (2026-05-07)
 
 
