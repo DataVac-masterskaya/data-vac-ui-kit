@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.4...v1.0.5) (2026-05-07)
+
+
+### Bug Fixes
+
+* default to light theme instead of following system preference ([20ed0eb](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/20ed0ebb9a23a26987bada4908375ff02844de3f))
+
 ## [1.0.4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.3...v1.0.4) (2026-05-07)
 
 
