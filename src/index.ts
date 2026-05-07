@@ -1,3 +1,4 @@
+'use client'
 import './tailwind.css'
 
 // Utils
