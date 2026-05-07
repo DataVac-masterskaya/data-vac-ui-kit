@@ -36,7 +36,6 @@ export function ThemeProvider({
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('datavac-theme')
       if (saved && allThemes[saved]) return saved
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
     }
     return 'light'
   }
