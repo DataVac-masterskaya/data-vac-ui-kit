@@ -19,7 +19,7 @@
   "scripts": {
     "theme:generate": "node scripts/generate-theme-css.mjs",
     "icons:generate": "node scripts/generate-icons.mjs",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && tsc --project tsconfig.declaration.json",
     "dev": "vite build --watch",
     "lint": "eslint ./src",
     "format": "prettier ./src --write",
