@@ -1,6 +1,6 @@
 {
   "name": "@datavac/ui-kit",
-  "version": "0.0.0-semantic-release",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
