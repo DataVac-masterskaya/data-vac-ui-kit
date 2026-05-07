@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.1...v1.0.2) (2026-05-07)
+
+
+### Bug Fixes
+
+* mark library as client-only for Next.js App Router compatibility ([3cb217e](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/3cb217ef1a5d83767d699852265d43e1a0209495))
+
 ## [1.0.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.0...v1.0.1) (2026-05-07)
 
 
