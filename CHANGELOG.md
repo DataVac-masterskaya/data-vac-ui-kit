@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.2...v1.0.3) (2026-05-07)
+
+
+### Bug Fixes
+
+* generate TypeScript declarations for npm package consumers ([f4291be](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/f4291bea3f9297a23bcbe27bf742e276e40c3d3b))
+
 ## [1.0.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.1...v1.0.2) (2026-05-07)
 
 
