@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.6...v1.0.7) (2026-05-08)
+
+
+### Bug Fixes
+
+* responsive toggle, hydration-safe theme init, Storybook theme switcher ([3ff8288](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/3ff82886c4d9412905cb01283aa6a8d88ae420dc))
+
 ## [1.0.6](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.5...v1.0.6) (2026-05-08)
 
 
