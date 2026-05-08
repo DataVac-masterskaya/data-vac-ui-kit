@@ -28,8 +28,8 @@ describe('SearchBar', () => {
     expect(screen.getByPlaceholderText('Поиск')).toBeInTheDocument()
   })
 
-  it('renders search icon img', () => {
+  it('renders search icon svg', () => {
     const { container } = render(<SearchBar placeholder="Поиск" />)
-    expect(container.querySelector('img')).toBeInTheDocument()
+    expect(container.querySelector('svg')).toBeInTheDocument()
   })
 })
