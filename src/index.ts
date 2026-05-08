@@ -32,6 +32,9 @@ export { Spinner, Skeleton } from './components/Spinner'
 // UI states
 export { EmptyState, ErrorState } from './components/States'
 
+// Tabs
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/Tabs'
+
 // Navigation
 export { ThemeToggle } from './components/ThemeToggle'
 export { Switch } from './components/Switch'
