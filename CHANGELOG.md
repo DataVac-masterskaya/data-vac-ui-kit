@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.7...v1.1.0) (2026-05-08)
+
+
+### Features
+
+* add secondary button variant (white bg + dark text) ([cac058e](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/cac058ee5ba06edb2cf66c69d3818a939b6d46fa))
+
 ## [1.0.7](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.6...v1.0.7) (2026-05-08)
 
 
