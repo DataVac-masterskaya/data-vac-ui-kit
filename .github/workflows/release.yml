@@ -33,7 +33,7 @@ jobs:
       - run: npm run test:storybook
 
       # Upload built Storybook as artifact for Chromatic
-      - run: npm run build-storybook
+      - run: npm run build-storybook -- --stats-json
       - uses: actions/upload-artifact@v4
         with:
           name: storybook-static
