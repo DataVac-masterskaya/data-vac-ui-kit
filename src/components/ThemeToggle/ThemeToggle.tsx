@@ -1,15 +1,11 @@
-import { useState } from 'react'
 import { cn } from '../../lib/utils'
 import { SunIcon, MoonStarsIcon } from '../../icons'
 import { Switch } from '../Switch'
+import { useTheme } from '../ThemeProvider'
 
 export function ThemeToggle({ className }: { className?: string }) {
-  const [isDark, setIsDark] = useState(false)
-
-  const toggle = (next: boolean) => {
-    setIsDark(next)
-    document.documentElement.classList.toggle('dark', next)
-  }
+  const { themeName, toggleTheme } = useTheme()
+  const isDark = themeName === 'dark'
 
   return (
     <>
@@ -18,7 +14,7 @@ export function ThemeToggle({ className }: { className?: string }) {
         <span className={cn('text-xs font-sans', isDark ? 'text-fg-muted' : 'text-fg')}>День</span>
         <Switch
           checked={isDark}
-          onChange={toggle}
+          onChange={() => toggleTheme()}
           size="sm"
           trackClassName={isDark ? 'bg-neutral' : 'bg-subtle'}
           thumbClassName={isDark ? 'bg-accent' : 'bg-neutral'}
@@ -32,7 +28,7 @@ export function ThemeToggle({ className }: { className?: string }) {
         role="switch"
         aria-checked={isDark}
         aria-label={isDark ? 'Включить светлую тему' : 'Включить тёмную тему'}
-        onClick={() => toggle(!isDark)}
+        onClick={toggleTheme}
         className={cn(
           'relative flex md:hidden w-[58px] h-8 rounded-pill bg-neutral overflow-hidden',
           className,
