@@ -20,7 +20,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     <div
       ref={ref}
       className={cn(
-        'bg-card rounded-card',
+        'bg-card rounded-card text-fg',
         shadow && 'shadow-[0_4px_50px_rgba(0,0,0,0.03)]',
         paddingMap[padding],
         className,
