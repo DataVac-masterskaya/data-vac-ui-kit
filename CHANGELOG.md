@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.2.1...v1.3.0) (2026-05-08)
+
+
+### Bug Fixes
+
+* accordion smooth height animation and rotation icon ([d542573](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/d542573e2afe9f069362d9dda53519dfae44e57e))
+* await findAllByRole in ThemeToggle story (mounted guard) ([90fd294](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/90fd29403abe3a8c4bbaa7ece1da7d8e56c12462))
+* replace hardcoded colors with design tokens ([9098b99](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/9098b99043b9ea2d7f236db0b972f8298876bd18)), closes [#A6A6A6](https://github.com/DataVac-masterskaya/data-vac-ui-kit/issues/A6A6A6)
+* update SearchBar test to expect svg instead of img ([96a2da8](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/96a2da8bd6df00d0b3531f3fc8ee74097abb9c65))
+
+
+### Features
+
+* add Tabs component ([b603b37](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/b603b37050e4a15a68f340071338245543c7c8e6))
+
 ## [1.2.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.2.0...v1.2.1) (2026-05-08)
 
 
