@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { expect } from 'storybook/test'
+import { ThemeProvider } from '../ThemeProvider'
 import { ThemeToggle } from './ThemeToggle'
 
 const meta = {
@@ -8,9 +9,11 @@ const meta = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="bg-page text-fg p-6 rounded-card transition-colors duration-200 min-w-48">
-        <Story />
-      </div>
+      <ThemeProvider>
+        <div className="bg-page text-fg p-6 rounded-card transition-colors duration-200 min-w-48">
+          <Story />
+        </div>
+      </ThemeProvider>
     ),
   ],
   argTypes: {
