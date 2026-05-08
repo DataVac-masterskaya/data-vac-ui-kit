@@ -14,7 +14,7 @@ export function Drawer({ trigger, title, children, className }: DrawerProps) {
     <VaulDrawer.Root direction="right">
       <VaulDrawer.Trigger asChild>{trigger}</VaulDrawer.Trigger>
       <VaulDrawer.Portal>
-        <VaulDrawer.Overlay className="fixed inset-0 bg-black/20 backdrop-blur-[2px] z-40" />
+        <VaulDrawer.Overlay className="fixed inset-0 bg-overlay backdrop-blur-sm z-40" />
         <VaulDrawer.Content
           className={cn(
             'fixed right-0 top-0 bottom-0 z-50 flex flex-col bg-card w-[464px] pt-16 pb-10 px-8 overflow-y-auto overflow-x-hidden',

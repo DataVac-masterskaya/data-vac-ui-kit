@@ -54,7 +54,7 @@ export const WithLongContent: Story = {
     trigger: <Button variant="dark">Открыть с длинным контентом</Button>,
     title: 'Детали вакцинации',
     children: (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div className="flex flex-col gap-4">
         <p>
           Вакцина против дифтерии, столбняка и коклюша (АКДС) — комбинированная вакцина,
           обеспечивающая защиту сразу от трёх инфекционных заболеваний.
