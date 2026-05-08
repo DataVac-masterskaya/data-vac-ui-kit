@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.1.0...v1.1.1) (2026-05-08)
+
+
+### Bug Fixes
+
+* hide ThemeToggle before mount to prevent animation flicker ([4554150](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/4554150bccec5d685a87dc16bd2a900a64316278))
+
 # [1.1.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.7...v1.1.0) (2026-05-08)
 
 
