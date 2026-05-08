@@ -1,6 +1,14 @@
 'use client'
 
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from 'react'
 import { defaultTheme, themes } from '../../themes'
 import type { ThemeName, ThemeTokens } from '../../themes'
 
@@ -29,20 +37,19 @@ export function ThemeProvider({
   customThemes,
   applyToRoot = true,
 }: ThemeProviderProps) {
-  const allThemes = { ...themes, ...customThemes }
+  const allThemes = useMemo(() => ({ ...themes, ...customThemes }), [customThemes])
 
-  const getInitialTheme = (): ThemeName => {
-    if (initialTheme) return initialTheme
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('datavac-theme')
-      if (saved && allThemes[saved]) return saved
-    }
-    return 'light'
-  }
-
-  const [themeName, setThemeName] = useState<ThemeName>(getInitialTheme)
+  const [themeName, setThemeName] = useState<ThemeName>(initialTheme ?? 'light')
 
   const tokens = allThemes[themeName] ?? defaultTheme
+
+  // Read localStorage after mount so toggle reflects saved preference.
+  useEffect(() => {
+    const saved = localStorage.getItem('datavac-theme')
+    if (!saved || !allThemes[saved]) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setThemeName(saved)
+  }, [allThemes])
 
   useEffect(() => {
     if (applyToRoot) {

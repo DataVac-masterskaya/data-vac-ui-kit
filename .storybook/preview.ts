@@ -1,15 +1,19 @@
 import '../src/tailwind.css'
-import type { Preview } from '@storybook/react'
+import { withThemeByClassName } from '@storybook/addon-themes'
+import type { Preview, ReactRenderer } from '@storybook/react'
 
 const preview: Preview = {
+  decorators: [
+    withThemeByClassName<ReactRenderer>({
+      themes: {
+        'Светлая': '',
+        'Тёмная': 'dark',
+      },
+      defaultTheme: 'Светлая',
+    }),
+  ],
   parameters: {
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#F3F3F3' },
-        { name: 'dark', value: '#1a1a1a' },
-      ],
-    },
+    backgrounds: { disable: true },
   },
 }
 

@@ -8,6 +8,9 @@
 
 @import 'tailwindcss';
 
+/* Force-generate md: variants used in components (library build doesn't auto-scan TSX) */
+@source inline("md:flex md:hidden");
+
 /* ==========================================================================
    GENERATED FILE — не редактировать вручную!
    Источники: src/themes/default.json, dark.json, vars-map.json
