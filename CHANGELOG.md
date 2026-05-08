@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.5...v1.0.6) (2026-05-08)
+
+
+### Bug Fixes
+
+* connect ThemeToggle to ThemeProvider context ([a1dc84a](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/a1dc84a340a1abf061ead2399cf11ce197f2cc31))
+
 ## [1.0.5](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.0.4...v1.0.5) (2026-05-07)
 
 
