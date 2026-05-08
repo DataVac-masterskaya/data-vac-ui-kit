@@ -22,6 +22,10 @@ export { Drawer } from './components/Drawer'
 // Accordion
 export { Accordion, AccordionItem } from './components/Accordion'
 
+// Layout
+export { Card } from './components/Card'
+export type { CardProps } from './components/Card'
+
 // Loading states
 export { Spinner, Skeleton } from './components/Spinner'
 
