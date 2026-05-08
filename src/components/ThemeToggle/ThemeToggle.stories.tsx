@@ -32,7 +32,7 @@ export const Default: Story = {
     // The desktop switch (md:flex) is rendered but may be hidden by CSS —
     // find the input[role=switch] which is a real interactive element.
     // The mobile button (role=switch) is also present.
-    const switches = canvas.getAllByRole('switch')
+    const switches = await canvas.findAllByRole('switch')
     // Click the first available switch
     await userEvent.click(switches[0])
     // After toggle, dark class should appear on documentElement
