@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.2.0...v1.2.1) (2026-05-08)
+
+
+### Bug Fixes
+
+* add text-fg to Card so text is light in dark theme ([3b9027b](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/3b9027bf958819fc3bfefd167153eff762f94dbc))
+
 # [1.2.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.1.1...v1.2.0) (2026-05-08)
 
 
