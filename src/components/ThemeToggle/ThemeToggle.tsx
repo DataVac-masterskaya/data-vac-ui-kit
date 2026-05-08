@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { cn } from '../../lib/utils'
 import { SunIcon, MoonStarsIcon } from '../../icons'
 import { Switch } from '../Switch'
@@ -6,6 +7,12 @@ import { useTheme } from '../ThemeProvider'
 export function ThemeToggle({ className }: { className?: string }) {
   const { themeName, toggleTheme } = useTheme()
   const isDark = themeName === 'dark'
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true)
+  }, [])
+  if (!mounted) return null
 
   return (
     <>
