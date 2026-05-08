@@ -21,7 +21,7 @@ const meta = {
     },
     variant: {
       control: 'radio',
-      options: ['primary', 'dark'],
+      options: ['primary', 'secondary', 'dark'],
       description: 'Визуальный вариант кнопки',
     },
     size: {
@@ -74,6 +74,17 @@ export const AllVariants: Story = {
         </Button>
         <Button {...args} variant="primary" size="md" disabled>
           Primary disabled
+        </Button>
+      </div>
+      <div className="flex gap-4 items-center">
+        <Button {...args} variant="secondary" size="md">
+          Secondary md
+        </Button>
+        <Button {...args} variant="secondary" size="sm">
+          Secondary sm
+        </Button>
+        <Button {...args} variant="secondary" size="md" disabled>
+          Secondary disabled
         </Button>
       </div>
       <div className="flex gap-4 items-center">
