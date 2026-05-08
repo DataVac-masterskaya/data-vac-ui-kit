@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.1.1...v1.2.0) (2026-05-08)
+
+
+### Features
+
+* add Card component ([2cd15e5](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/2cd15e53d9d4ddbe85a7fff134e032989c133aff))
+
 ## [1.1.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.1.0...v1.1.1) (2026-05-08)
 
 
