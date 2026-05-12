@@ -95,19 +95,17 @@ feat(tag-filter): добавить компонент фильтрации по 
 - Добавлены Storybook-истории: Default, WithActive, WithPinkSelected
 - Экспортирован из `ui-kit/index`
 
-## Как проверить
+## Тест-план
 
-1. Установить prerelease: `npm i @datavac/ui-kit@tag-filter`
-2. Импортировать `TagFilter` и проверить переключение состояний
-3. Открыть Storybook → TagFilter
+- [ ] Все состояния компонента работают корректно
+- [ ] `npm run test` — все тесты зелёные
+- [ ] Storybook — все stories рендерятся без ошибок
+- [ ] Prerelease-версия проверена в приложении: `npm i @datavac/ui-kit@tag-filter`
 
-## Связанные задачи
-
-Реализует DataVac-masterskaya/data-vac-frontend#22
+Closes DataVac-masterskaya/data-vac-frontend#22
 ```
 
-> После открытия PR — оставить комментарий в задаче `data-vac-frontend` со ссылкой на PR:
-> `Реализовано в PR: DataVac-masterskaya/data-vac-ui-kit#<номер>`
+> `Closes owner/repo#N` автоматически закроет issue в `data-vac-frontend` при мёрже PR.
 
 **Чеклист перед отправкой на ревью:**
 - [ ] Ветка синхронизирована с `main` через `rebase`
