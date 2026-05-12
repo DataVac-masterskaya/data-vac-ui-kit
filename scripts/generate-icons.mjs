@@ -24,6 +24,7 @@ function svgToJsx(svg) {
     // SVG-атрибуты → camelCase JSX
     .replace(/fill-rule=/g, 'fillRule=')
     .replace(/clip-rule=/g, 'clipRule=')
+    .replace(/clip-path=/g, 'clipPath=')
     .replace(/stroke-linecap=/g, 'strokeLinecap=')
     .replace(/stroke-linejoin=/g, 'strokeLinejoin=')
     .replace(/stroke-width=/g, 'strokeWidth=')
