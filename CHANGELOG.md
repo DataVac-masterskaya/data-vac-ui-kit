@@ -1,3 +1,15 @@
+# [1.4.0-administration-icon.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.3.0...v1.4.0-administration-icon.1) (2026-05-12)
+
+
+### Bug Fixes
+
+* use ComponentType instead of ReactElement for SVG icon map ([3eeea55](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/3eeea552e7dbfc1a7bedb3a879a83ef8583e3e7a))
+
+
+### Features
+
+* add AdministrationIcon component with tooltip and info badge ([078a06c](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/078a06c2c47f44391732314e0f2265c4871e3514))
+
 # [1.3.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.2.1...v1.3.0) (2026-05-08)
 
 
