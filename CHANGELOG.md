@@ -1,3 +1,10 @@
+# [1.4.0-administration-icon.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.4.0-administration-icon.1...v1.4.0-administration-icon.2) (2026-05-12)
+
+
+### Features
+
+* add new icons and regenerate index ([695075d](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/695075d53b2cfdd32b008ad52e0326e6bb533705))
+
 # [1.4.0-administration-icon.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.3.0...v1.4.0-administration-icon.1) (2026-05-12)
 
 
