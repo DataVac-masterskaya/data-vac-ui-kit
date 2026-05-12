@@ -4,11 +4,13 @@ import { storybookTest } from '@storybook/addon-vitest/vitest-plugin'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
   plugins: [
     tailwindcss(),
     react(),
+    svgr(),
     storybookTest(),
     dts({
       include: ['src'],

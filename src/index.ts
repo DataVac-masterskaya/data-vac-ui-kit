@@ -35,6 +35,10 @@ export { EmptyState, ErrorState } from './components/States'
 // Tabs
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/Tabs'
 
+// Administration methods
+export { AdministrationIcon } from './components/AdministrationIcon'
+export type { AdministrationIconProps, AdministrationMethod } from './components/AdministrationIcon'
+
 // Navigation
 export { ThemeToggle } from './components/ThemeToggle'
 export { Switch } from './components/Switch'

@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin'
 import { playwright } from '@vitest/browser-playwright'
 import { defineConfig } from 'vitest/config'
+import svgr from 'vite-plugin-svgr'
 
 const dirname =
   typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url))
@@ -13,7 +14,7 @@ export default defineConfig({
   test: {
     projects: [
       {
-        plugins: [react()],
+        plugins: [react(), svgr()],
         test: {
           name: 'unit',
           globals: true,
@@ -24,7 +25,7 @@ export default defineConfig({
         },
       },
       {
-        plugins: [storybookTest({ configDir: path.join(dirname, '.storybook') })],
+        plugins: [svgr(), storybookTest({ configDir: path.join(dirname, '.storybook') })],
         test: {
           name: 'storybook',
           setupFiles: ['.storybook/vitest.setup.ts'],
