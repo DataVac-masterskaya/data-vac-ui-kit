@@ -32,7 +32,7 @@ const administrationLabels: Record<AdministrationMethod, string> = {
 
 const administrationIcons: Record<
   AdministrationMethod,
-  (props: React.SVGProps<SVGSVGElement>) => React.ReactElement
+  React.ComponentType<React.SVGProps<SVGSVGElement>>
 > = {
   cutaneously: CutaneouslyIcon,
   intramuscularly: IntramuscularlyIcon,
