@@ -1,6 +1,6 @@
 {
   "name": "@datavac/ui-kit",
-  "version": "1.4.0-administration-icon.2",
+  "version": "1.4.0",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
