@@ -61,6 +61,18 @@ git push origin feat/your-task-name
 git push origin feat/your-task-name --force-with-lease
 ```
 
+> **Почему пуш может быть отклонён.** CI автоматически публикует prerelease-версию при каждом пуше в `feat/*` и добавляет коммит `chore(release): x.x.x [skip ci]` прямо в ветку. Если после этого запушить локальные коммиты без синхронизации — получишь rejected. Решение:
+>
+> ```bash
+> git pull --rebase && git push
+> ```
+>
+> Это подтянет CI-коммит и переложит твои коммиты поверх без лишнего merge-коммита. Чтобы `git pull` всегда работал через rebase, выполни один раз в репозитории:
+>
+> ```bash
+> git config pull.rebase true
+> ```
+
 ## Правила Pull Request
 
 - PR — **единственный** способ попасть в `main`, прямой пуш заблокирован
