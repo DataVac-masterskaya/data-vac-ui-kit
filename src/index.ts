@@ -33,7 +33,7 @@ export { Spinner, Skeleton } from './components/Spinner'
 export { EmptyState, ErrorState } from './components/States'
 
 // Tabs
-export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/Tabs'
+export { Tabs } from './components/Tabs'
 
 // Administration methods
 export { AdministrationIcon } from './components/AdministrationIcon'
