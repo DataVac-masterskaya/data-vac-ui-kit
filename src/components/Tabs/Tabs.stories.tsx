@@ -1,65 +1,106 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { expect } from 'storybook/test'
-import { ThemeProvider } from '../ThemeProvider'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './Tabs'
+import { useState } from 'react'
+import { Tabs, type TabItem } from './Tabs'
 
-const meta = {
-  title: 'Components/Tabs',
+const meta: Meta<typeof Tabs> = {
+  title: 'UI/Tabs',
   component: Tabs,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'Универсальный компонент вкладок на основе Radix Tabs',
+      },
+    },
+  },
   tags: ['autodocs'],
-  decorators: [
-    (Story) => (
-      <ThemeProvider>
-        <div className="bg-page p-6 rounded-card min-w-80">
-          <Story />
-        </div>
-      </ThemeProvider>
-    ),
-  ],
-  args: { children: null },
+  argTypes: {
+    activeId: {
+      control: 'text',
+      description: 'ID активной вкладки',
+    },
+    onChange: {
+      action: 'changed',
+      description: 'Колбэк при смене вкладки',
+    },
+    tabs: {
+      description: 'Массив вкладок',
+      control: 'object',
+    },
+    className: {
+      control: 'text',
+      description: 'CSS класс для обертки',
+    },
+    tabClassName: {
+      control: 'text',
+      description: 'Базовые стили каждой вкладки',
+    },
+    activeClassName: {
+      control: 'text',
+      description: 'Дополнительные стили активной вкладки',
+    },
+  },
 } satisfies Meta<typeof Tabs>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Tabs>
 
-export const Default: Story = {
-  render: () => (
-    <Tabs defaultValue="card">
-      <TabsList>
-        <TabsTrigger value="card">Картой</TabsTrigger>
-        <TabsTrigger value="requisites">По реквизитам</TabsTrigger>
-        <TabsTrigger value="qr">Перевод по QR-коду</TabsTrigger>
-        <TabsTrigger value="sbp">Через СБП</TabsTrigger>
-      </TabsList>
-      <TabsContent value="card">
-        <div className="text-fg text-base">Содержимое вкладки «Картой»</div>
-      </TabsContent>
-      <TabsContent value="requisites">
-        <div className="text-fg text-base">Содержимое вкладки «По реквизитам»</div>
-      </TabsContent>
-      <TabsContent value="qr">
-        <div className="text-fg text-base">Содержимое вкладки «Перевод по QR-коду»</div>
-      </TabsContent>
-      <TabsContent value="sbp">
-        <div className="text-fg text-base">Содержимое вкладки «Через СБП»</div>
-      </TabsContent>
-    </Tabs>
-  ),
-  play: async ({ canvas, userEvent }) => {
-    // Initial state: «Картой» active, its content visible
-    await expect(canvas.getByText('Содержимое вкладки «Картой»')).toBeVisible()
+// Вспомогательный компонент-обёртка для управления состоянием в story
+const TabsWithState = ({
+  tabs,
+  initialActiveId,
+  ...props
+}: {
+  tabs: TabItem[]
+  initialActiveId?: string
+} & Omit<React.ComponentProps<typeof Tabs>, 'activeId' | 'onChange'>) => {
+  const [activeId, setActiveId] = useState(initialActiveId || tabs[0]?.id || '')
 
-    // Switch to «Через СБП»
-    await userEvent.click(canvas.getByRole('tab', { name: 'Через СБП' }))
-    await expect(canvas.getByText('Содержимое вкладки «Через СБП»')).toBeVisible()
-
-    // Previous tab content should no longer be visible
-    await expect(canvas.queryByText('Содержимое вкладки «Картой»')).not.toBeInTheDocument()
-  },
+  return <Tabs tabs={tabs} activeId={activeId} onChange={setActiveId} {...props} />
 }
 
-export const DarkMode: Story = {
-  name: 'Тёмная тема',
+export const PillTabs: Story = {
+  render: () => (
+    <TabsWithState
+      tabs={[
+        { id: '123', label: 'Картой', content: <div className="p-4">Раскладка с суммами</div> },
+        { id: '345', label: 'Перевод по QR-коду', content: <div className="p-4">QR-код</div> },
+        { id: '567', label: 'По реквизитам', content: <div className="p-4">Ревизиты</div> },
+      ]}
+      className="p-4 gap-6 bg-page p-6 rounded-card min-w-80"
+      listClassName="gap-2 justify-center items-center"
+      tabClassName="py-1.5 px-3 bg-interactive hover:text-accent data-[state=active]:hover:text-interactive rounded-full"
+      activeClassName="bg-neutral text-interactive rounded-full"
+    />
+  ),
+}
+
+export const TextTabs: Story = {
+  render: () => (
+    <TabsWithState
+      tabs={[
+        {
+          id: '321',
+          label: 'Переработанная информация из разделов',
+          content: <div className="p-4">Полное название вакцины...</div>,
+        },
+        {
+          id: '654',
+          label: 'Информация из инструкции',
+          content: <div className="p-4">Инструкция</div>,
+        },
+      ]}
+      className="p-4 gap-6 bg-page p-6 rounded-card min-w-80"
+      listClassName="gap-8 justify-start items-center"
+      tabClassName="text-fg-muted hover:text-accent font-semibold data-[state=active]:hover:text-fg"
+      activeClassName="text-fg"
+      contentClassName="pt-4"
+    />
+  ),
+}
+
+export const PillTabsDarkMode: Story = {
+  name: 'Тёмная тема пилюльные табы',
   decorators: [
     (Story) => {
       document.documentElement.classList.add('dark')
@@ -71,25 +112,51 @@ export const DarkMode: Story = {
     },
   ],
   render: () => (
-    <Tabs defaultValue="qr">
-      <TabsList>
-        <TabsTrigger value="card">Картой</TabsTrigger>
-        <TabsTrigger value="requisites">По реквизитам</TabsTrigger>
-        <TabsTrigger value="qr">Перевод по QR-коду</TabsTrigger>
-        <TabsTrigger value="sbp">Через СБП</TabsTrigger>
-      </TabsList>
-      <TabsContent value="card">
-        <div className="text-fg text-base">Содержимое вкладки «Картой»</div>
-      </TabsContent>
-      <TabsContent value="requisites">
-        <div className="text-fg text-base">Содержимое вкладки «По реквизитам»</div>
-      </TabsContent>
-      <TabsContent value="qr">
-        <div className="text-fg text-base">Содержимое вкладки «Перевод по QR-коду»</div>
-      </TabsContent>
-      <TabsContent value="sbp">
-        <div className="text-fg text-base">Содержимое вкладки «Через СБП»</div>
-      </TabsContent>
-    </Tabs>
+    <TabsWithState
+      tabs={[
+        { id: '123', label: 'Картой', content: <div className="p-4">Раскладка с суммами</div> },
+        { id: '345', label: 'Перевод по QR-коду', content: <div className="p-4">QR-код</div> },
+        { id: '567', label: 'По реквизитам', content: <div className="p-4">Ревизиты</div> },
+      ]}
+      className="gap-6"
+      listClassName="gap-2 justify-center items-center"
+      tabClassName="py-1.5 px-3 bg-[#26282B] text-fg hover:text-accent data-[state=active]:hover:text-white rounded-full"
+      activeClassName="bg-neutral text-white rounded-full"
+      contentClassName="pt-4 text-fg"
+    />
+  ),
+}
+
+export const TextTabsDarkMode: Story = {
+  name: 'Тёмная тема текстовые табы',
+  decorators: [
+    (Story) => {
+      document.documentElement.classList.add('dark')
+      return (
+        <div className="dark bg-page p-6 rounded-card min-w-80">
+          <Story />
+        </div>
+      )
+    },
+  ],
+  render: () => (
+    <TabsWithState
+      tabs={[
+        {
+          id: '321',
+          label: 'Переработанная информация из разделов',
+          content: <div className="p-4">Полное название вакцины...</div>,
+        },
+        {
+          id: '654',
+          label: 'Информация из инструкции',
+          content: <div className="p-4">Инструкция</div>,
+        },
+      ]}
+      listClassName="gap-8 justify-start items-center"
+      tabClassName="text-fg-muted hover:text-accent font-semibold data-[state=active]:hover:text-fg"
+      activeClassName="text-fg"
+      contentClassName="pt-4 text-fg"
+    />
   ),
 }
