@@ -13,7 +13,17 @@ export type { ButtonProps } from './components/Button'
 export { Badge, Chip, Counter } from './components/Badge'
 
 // Inputs
-export { Input, SearchBar } from './components/Input'
+export { Input } from './components/Input'
+
+// Search
+export { SearchDropdown } from './components/SearchDropdown'
+export type {
+  SearchDropdownProps,
+  SearchResultGroup,
+  SearchResultItem,
+} from './components/SearchDropdown'
+export { SearchBar } from './components/SearchBar'
+export type { SearchBarProps } from './components/SearchBar'
 
 // Overlays
 export { Tooltip } from './components/Tooltip'
