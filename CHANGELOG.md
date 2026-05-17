@@ -1,3 +1,10 @@
+# [1.5.0-scroll-to-top-button.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.4.0...v1.5.0-scroll-to-top-button.1) (2026-05-17)
+
+
+### Features
+
+* **scrollButton:** добавил компонент ScrollToTopButton ([0dcbd32](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/0dcbd3288121ef44dd812503669876589b40b65d))
+
 # [1.4.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.3.0...v1.4.0) (2026-05-13)
 
 
