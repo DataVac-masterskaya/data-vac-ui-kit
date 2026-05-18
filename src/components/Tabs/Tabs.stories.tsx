@@ -35,10 +35,6 @@ const meta: Meta<typeof Tabs> = {
       control: 'text',
       description: 'Базовые стили каждой вкладки',
     },
-    activeClassName: {
-      control: 'text',
-      description: 'Дополнительные стили активной вкладки',
-    },
   },
 } satisfies Meta<typeof Tabs>
 
@@ -67,10 +63,9 @@ export const PillTabs: Story = {
         { id: '345', label: 'Перевод по QR-коду', content: <div className="p-4">QR-код</div> },
         { id: '567', label: 'По реквизитам', content: <div className="p-4">Ревизиты</div> },
       ]}
-      className="p-4 gap-6 bg-page p-6 rounded-card min-w-80"
+      className="gap-6 p-6 bg-page rounded-card min-w-80"
       listClassName="gap-2 justify-center items-center"
-      tabClassName="py-1.5 px-3 bg-interactive hover:text-accent data-[state=active]:hover:text-interactive rounded-full"
-      activeClassName="bg-neutral text-interactive rounded-full"
+      tabClassName="py-1.5 px-3 bg-interactive hover:text-accent data-[state=active]:text-interactive data-[state=active]:bg-neutral data-[state=active]:hover:text-interactive rounded-full"
     />
   ),
 }
@@ -90,10 +85,9 @@ export const TextTabs: Story = {
           content: <div className="p-4">Инструкция</div>,
         },
       ]}
-      className="p-4 gap-6 bg-page p-6 rounded-card min-w-80"
+      className="gap-5 bg-page p-6 rounded-card min-w-80"
       listClassName="gap-8 justify-start items-center"
-      tabClassName="text-fg-muted hover:text-accent font-semibold data-[state=active]:hover:text-fg"
-      activeClassName="text-fg"
+      tabClassName="text-fg-muted hover:text-accent font-semibold data-[state=active]:text-fg data-[state=active]:hover:text-fg"
       contentClassName="pt-4"
     />
   ),
@@ -120,8 +114,7 @@ export const PillTabsDarkMode: Story = {
       ]}
       className="gap-6"
       listClassName="gap-2 justify-center items-center"
-      tabClassName="py-1.5 px-3 bg-[#26282B] text-fg hover:text-accent data-[state=active]:hover:text-white rounded-full"
-      activeClassName="bg-neutral text-white rounded-full"
+      tabClassName="py-1.5 px-3 bg-[#26282B] text-fg hover:text-accent data-[state=active]:text-white data-[state=active]:bg-neutral data-[state=active]:hover:text-white rounded-full"
       contentClassName="pt-4 text-fg"
     />
   ),
@@ -153,9 +146,9 @@ export const TextTabsDarkMode: Story = {
           content: <div className="p-4">Инструкция</div>,
         },
       ]}
+      className="gap-5"
       listClassName="gap-8 justify-start items-center"
-      tabClassName="text-fg-muted hover:text-accent font-semibold data-[state=active]:hover:text-fg"
-      activeClassName="text-fg"
+      tabClassName="text-fg-muted hover:text-accent font-semibold data-[state=active]:text-fg data-[state=active]:hover:text-fg"
       contentClassName="pt-4 text-fg"
     />
   ),
