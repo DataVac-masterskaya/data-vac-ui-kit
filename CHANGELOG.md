@@ -1,3 +1,15 @@
+# [1.5.0-tabs-component.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.4.0...v1.5.0-tabs-component.1) (2026-05-18)
+
+
+### Bug Fixes
+
+* for test Tabs component ([b912af4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/b912af4cdd157c9dad656eee7799f4799631d434))
+
+
+### Features
+
+* add Tabs component ([318ed5d](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/318ed5db8904068a1b3d1e315d97ae02b2c5b1f7))
+
 # [1.4.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.3.0...v1.4.0) (2026-05-13)
 
 
