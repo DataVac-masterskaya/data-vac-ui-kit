@@ -14,7 +14,6 @@ export type TabsProps = {
   onChange: (id: string) => void
   className?: string
   tabClassName?: string
-  activeClassName?: string
   listClassName?: string
   contentClassName?: string
 }
@@ -25,7 +24,6 @@ export function Tabs({
   onChange,
   className,
   tabClassName,
-  activeClassName,
   listClassName,
   contentClassName,
 }: TabsProps) {
@@ -33,14 +31,14 @@ export function Tabs({
     <RadixTabs.Root
       value={activeId}
       onValueChange={onChange}
-      className={cn('flex flex-col', className)}
+      className={cn('flex flex-col gap-4', className)}
     >
       <RadixTabs.List className={cn('flex flex-wrap', listClassName)}>
         {tabs.map((tab) => (
           <RadixTabs.Trigger
             key={tab.id}
             value={tab.id}
-            className={cn('transition-all', tabClassName, activeId === tab.id && activeClassName)}
+            className={cn('transition-all', tabClassName)}
           >
             {tab.label}
           </RadixTabs.Trigger>
