@@ -34,7 +34,7 @@ describe('TagFilter', () => {
     expect(onChange).toHaveBeenCalledWith('Все');
   });
 
-  it('calls onChange with null when clicking on active tag (deselect)', async () => {
+  it('calls onChange with new tag when switching from another active tag', async () => {
     const onChange = vi.fn();
     render(
       <TagFilter
@@ -86,5 +86,19 @@ describe('TagFilter', () => {
 
     const inactiveButton = screen.getByText('Национальный календарь');
     expect(inactiveButton).toHaveAttribute('aria-pressed', 'false');
+  });
+
+  it('renders highlighted tags with pink color', () => {
+    render(
+      <TagFilter
+        tags={tags}
+        active={null}
+        onChange={() => {}}
+        highlighted={['Сверх календаря']}
+      />
+    );
+
+    const highlightedTag = screen.getByText('Сверх календаря');
+    expect(highlightedTag).toHaveClass('text-[#E30C5C]');
   });
 });
