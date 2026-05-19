@@ -1,3 +1,12 @@
+## [1.4.1-search-bar-and-dropdown.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.4.0...v1.4.1-search-bar-and-dropdown.1) (2026-05-19)
+
+
+### Bug Fixes
+
+* update dependencies and add pnpm support ([bc5c104](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/bc5c104ba37dce149f3acc0b8aaea4f98d923424))
+* update package-lock.json to use exact versioning for dependencies and devDependencies ([aa2426b](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/aa2426b73ee2fb82cdfdfada907a9ccdf780b915))
+* доработка SearchBar и SearchDropdown по макету и ТЗ ([7674ee1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/7674ee1a4df3c00e94b11db5e847df61774775d7))
+
 # [1.4.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.3.0...v1.4.0) (2026-05-13)
 
 
