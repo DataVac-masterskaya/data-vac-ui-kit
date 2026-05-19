@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Tabs, type TabItem } from './Tabs'
 
 const meta: Meta<typeof Tabs> = {
-  title: 'UI/Tabs',
+  title: 'Components/Tabs',
   component: Tabs,
   parameters: {
     layout: 'centered',
