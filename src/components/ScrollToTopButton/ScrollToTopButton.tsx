@@ -1,5 +1,5 @@
 import { RefObject, useEffect, useState } from 'react'
-import clsx from 'clsx'
+import { cn } from '../../lib/utils'
 import { ChevronDownIcon } from '../..'
 
 export interface ScrollToTopButtonProps {
@@ -50,8 +50,8 @@ export const ScrollToTopButton = ({
       type="button"
       aria-label="Наверх"
       onClick={handleClick}
-      className={clsx(
-        scrollContainer?.current? 'absolute' : 'fixed',
+      className={cn(
+        scrollContainer ? 'absolute' : 'fixed',
         'bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full rotate-180',
         'bg-[#E30C5C] text-white shadow-md transition-opacity duration-200',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#E30C5C]',
