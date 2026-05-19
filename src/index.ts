@@ -51,3 +51,6 @@ export * from './icons'
 export { ThemeProvider, useTheme } from './components/ThemeProvider'
 export { defaultTheme, darkTheme, themes, tokensToCssVars } from './themes'
 export type { ThemeTokens, ThemeName } from './themes'
+
+// TagFilter
+export { TagFilter } from './components/TagFilter';

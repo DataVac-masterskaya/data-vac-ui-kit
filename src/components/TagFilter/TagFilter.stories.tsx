@@ -51,14 +51,12 @@ export const WithActiveTag: Story = {
 };
 
 export const WithPinkHighlight: Story = {
+  args: {
+    highlighted: ['Сверх календаря'],
+  },
   render: function Render(args) {
     const [active, setActive] = useState<string | null>(null);
-    return (
-      <div className="pink-tag">
-        <style>{'.pink-tag button:nth-child(3) { color: #E30C5C; }'}</style>
-        <TagFilter {...args} active={active} onChange={setActive} />
-      </div>
-    );
+    return <TagFilter {...args} active={active} onChange={setActive} />;
   },
 };
 
@@ -67,14 +65,14 @@ export const ManyTags: Story = {
     tags: [
       'Вирусные', 'Бактериальные', 'Паразитарные', 'Грибковые',
       'Прионные', 'Протозойные', 'Риккетсиозы', 'Микоплазменные',
+      'Хламидийные', 'Спирохетозы', 'Микобактериальные', 'Анаэробные',
+      'Аэробные', 'Зоонозные', 'Арбовирусные', 'Онковирусные',
+      'Аденовирусные', 'Герпесвирусные', 'Ротавирусные', 'Калицивирусные',
+      'Парвовирусные', 'Коронавирусные', 'Флавивирусные', 'Тогавирусные',
     ],
   },
   render: function Render(args) {
     const [active, setActive] = useState<string | null>(null);
-    return (
-      <div className="w-96">
-        <TagFilter {...args} active={active} onChange={setActive} />
-      </div>
-    );
+    return <TagFilter {...args} active={active} onChange={setActive} />;
   },
 };

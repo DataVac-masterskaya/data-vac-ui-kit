@@ -8,17 +8,23 @@ export type TagFilterProps = {
   active: string | null;
   onChange: (tag: string | null) => void;
   className?: string;
+  highlighted?: string[];
 };
 
-const getChipClassName = (active: string | null, tag: string): string => {
+const getChipClassName = (active: string | null, tag: string, highlighted?: string[]): string => {
   const isActive = active === tag;
+  const isHighlighted = highlighted?.includes(tag) ?? false;
+
   if (isActive) {
-    return 'bg-[#4F5153] text-white hover:bg-[#4F5153]';
+    return 'bg-[#4F5153] text-white';
   }
-  return 'bg-white text-[#323335] hover:text-[#E30C5C] hover:bg-white';
+  if (isHighlighted) {
+    return 'bg-white text-[#E30C5C]';
+  }
+  return 'bg-white text-[#323335]';
 };
 
-export function TagFilter({ tags, active, onChange, className }: TagFilterProps) {
+export function TagFilter({ tags, active, onChange, className, highlighted = [] }: TagFilterProps) {
   const handleClick = (tag: string) => {
     if (active === tag) {
       onChange(null);
@@ -28,13 +34,13 @@ export function TagFilter({ tags, active, onChange, className }: TagFilterProps)
   };
 
   return (
-    <div className={cn('flex gap-2 overflow-x-auto', className)}>
+    <div className={cn('flex gap-2 flex-wrap', className)}>
       {tags.map((tag) => (
         <Chip
           key={tag}
           onClick={() => handleClick(tag)}
           aria-pressed={active === tag}
-          className={getChipClassName(active, tag)}
+          className={getChipClassName(active, tag, highlighted)}
         >
           {tag}
         </Chip>
