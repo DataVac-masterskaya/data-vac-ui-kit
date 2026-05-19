@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.5.0...v1.6.0) (2026-05-19)
+
+
+### Bug Fixes
+
+* **scrollButton:** исправиления по PR[#4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/issues/4) ([b4c3b6d](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/b4c3b6d6dc49f88197b694eae3b377f069586167))
+
+
+### Features
+
+* **scrollButton:** добавил компонент ScrollToTopButton ([43c8b10](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/43c8b100d2b69daf73705a2d4a216bdd402576eb))
+
 # [1.5.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.4.0...v1.5.0) (2026-05-19)
 
 
