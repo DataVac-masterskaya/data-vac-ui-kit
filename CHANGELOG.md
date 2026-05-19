@@ -1,3 +1,17 @@
+# [1.5.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.4.0...v1.5.0) (2026-05-19)
+
+
+### Bug Fixes
+
+* for test Tabs component ([cf84464](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/cf844647818b14ae4e414f4b39dce6347ac7ed45))
+
+
+### Features
+
+* add Tabs component ([2646b9d](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/2646b9de69b56cac2c16f410cbf240db24b44b64))
+* **tag-filter:** add TagFilter component with flex-wrap, highlighted prop, and tests ([b645780](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/b64578057963c2a5254c0d2ffa7b4fd528113b58))
+* **tag-filter:** add TagFilter component with pill chips ([da859f3](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/da859f3d854fd0bfd175baf7606b7701ec74c3ab))
+
 # [1.5.0-tabs-component.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.4.0...v1.5.0-tabs-component.1) (2026-05-18)
 
 
