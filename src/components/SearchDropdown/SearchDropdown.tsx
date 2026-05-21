@@ -1,5 +1,5 @@
 import * as Popover from '@radix-ui/react-popover'
-import { useCallback, useMemo, useRef, useState, type KeyboardEvent } from 'react'
+import { useCallback, useId, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import { Chip } from '../Badge'
 import { Spinner } from '../Spinner'
 import { cn } from '../../lib/utils'
@@ -47,9 +47,12 @@ export function SearchDropdown({
   onClose,
   isLoading = false,
   emptyStateText = 'Ничего не найдено',
+  listboxId,
 }: SearchDropdownProps) {
   const [activeIndex, setActiveIndex] = useState(-1)
   const listboxRef = useRef<HTMLDivElement>(null)
+  const generatedListboxId = useId()
+  const dropdownId = listboxId ?? generatedListboxId
 
   const flatItems = useMemo<FlatItem[]>(
     () =>
@@ -61,7 +64,7 @@ export function SearchDropdown({
 
   const activeDescendant =
     activeIndex >= 0 && activeIndex < flatItems.length
-      ? `option-${flatItems[activeIndex].groupIdx}-${flatItems[activeIndex].itemIdx}`
+      ? `${dropdownId}-option-${flatItems[activeIndex].groupIdx}-${flatItems[activeIndex].itemIdx}`
       : undefined
 
   const closeDropdown = useCallback(() => {
@@ -132,7 +135,7 @@ export function SearchDropdown({
         >
           <div
             ref={listboxRef}
-            id="search-dropdown-listbox"
+            id={dropdownId}
             role="listbox"
             aria-label="Результаты поиска"
             aria-activedescendant={activeDescendant}
@@ -155,7 +158,7 @@ export function SearchDropdown({
             ) : (
               results.map((group, groupIdx) => (
                 <div key={group.category} className="flex flex-col gap-1.5">
-                  <span className="text-sm font-normal text-[#959595]">{group.category}</span>
+                  <span className="text-sm font-normal text-fg-secondary">{group.category}</span>
                   <div className="flex flex-wrap gap-2">
                     {group.items.map((item, itemIdx) => {
                       const flatIdx = flatItems.findIndex(
@@ -166,11 +169,11 @@ export function SearchDropdown({
                         <Chip
                           key={item.id}
                           role="option"
-                          id={`option-${groupIdx}-${itemIdx}`}
+                          id={`${dropdownId}-option-${groupIdx}-${itemIdx}`}
                           aria-selected={isActive}
                           className={cn(
                             'group h-8 px-3 text-sm font-semibold leading-[18px] cursor-pointer',
-                            'bg-[#F3F3F3] hover:bg-[#F3F3F3] hover:text-accent transition-colors',
+                            'bg-subtle hover:bg-subtle hover:text-accent transition-colors',
                             isActive && 'ring-2 ring-accent',
                           )}
                           onClick={() => handleItemClick(item, group)}

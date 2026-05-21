@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from 'storybook/test'
-import { SearchBar } from '../SearchBar'
-import type { SearchResultGroup } from './SearchDropdown.types'
+import { SearchDropdown } from './SearchDropdown'
+import type { SearchDropdownProps, SearchResultGroup } from './SearchDropdown.types'
 
 const mockResults: SearchResultGroup[] = [
   {
@@ -40,15 +41,14 @@ const mockResults: SearchResultGroup[] = [
 
 const meta = {
   title: 'Components/SearchDropdown',
-  component: SearchBar, // показываем SearchBar, внутри которого работает SearchDropdown
+  component: SearchDropdown,
   parameters: {
     layout: 'centered',
     viewport: { defaultViewport: 'responsive' },
   },
   tags: ['autodocs'],
   argTypes: {
-    placeholder: { control: 'text' },
-    defaultValue: { control: 'text' },
+    query: { control: 'text' },
     isLoading: { control: 'boolean' },
   },
   decorators: [
@@ -60,48 +60,87 @@ const meta = {
       </div>
     ),
   ],
-} satisfies Meta<typeof SearchBar>
+} satisfies Meta<typeof SearchDropdown>
 
 export default meta
-type Story = StoryObj<typeof SearchBar>
+type Story = StoryObj<typeof SearchDropdown>
+
+function DropdownStory(args: Partial<SearchDropdownProps>) {
+  const [open, setOpen] = useState(true)
+
+  return (
+    <SearchDropdown
+      open={open}
+      onOpenChange={setOpen}
+      query={args.query ?? ''}
+      results={args.results ?? []}
+      onSelect={args.onSelect ?? fn()}
+      onClose={args.onClose ?? fn()}
+      isLoading={args.isLoading}
+      emptyStateText={args.emptyStateText}
+      listboxId={args.listboxId}
+      trigger={
+        <button
+          type="button"
+          className="w-full min-h-12 bg-card border border-border px-3 py-3 text-left rounded-card text-fg"
+          onClick={() => setOpen((current) => !current)}
+        >
+          {args?.query || 'Поиск'}
+        </button>
+      }
+    />
+  )
+}
 
 export const Default: Story = {
+  render: DropdownStory,
   args: {
-    defaultValue: '',
+    query: '',
     results: [],
-    onSearch: fn(),
     onSelect: fn(),
-    onSubmit: fn(),
+    onClose: fn(),
+    open: true,
+    onOpenChange: fn(),
+    trigger: null,
   },
 }
 
 export const WithResults: Story = {
+  render: DropdownStory,
   args: {
-    defaultValue: 'в',
+    query: 'в',
     results: mockResults,
-    onSearch: fn(),
     onSelect: fn(),
-    onSubmit: fn(),
+    onClose: fn(),
+    open: true,
+    onOpenChange: fn(),
+    trigger: null,
   },
 }
 
 export const EmptyState: Story = {
+  render: DropdownStory,
   args: {
-    defaultValue: 'чума',
+    query: 'чума',
     results: [],
-    onSearch: fn(),
     onSelect: fn(),
-    onSubmit: fn(),
+    onClose: fn(),
+    open: true,
+    onOpenChange: fn(),
+    trigger: null,
   },
 }
 
 export const Loading: Story = {
+  render: DropdownStory,
   args: {
-    defaultValue: 'в',
+    query: 'в',
     results: [],
     isLoading: true,
-    onSearch: fn(),
     onSelect: fn(),
-    onSubmit: fn(),
+    onClose: fn(),
+    open: true,
+    onOpenChange: fn(),
+    trigger: null,
   },
 }

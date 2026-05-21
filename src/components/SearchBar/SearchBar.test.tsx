@@ -68,11 +68,11 @@ describe('SearchBar', () => {
     await userEvent.type(getInput(), 'в')
 
     const clearButton = screen.getByRole('button', { name: 'Очистить поиск' })
-    expect(clearButton).toHaveClass('hover:bg-[#F3F3F3]')
-    expect(clearButton.querySelector('svg')).toHaveClass('group-hover:text-[#E30C5C]')
+    expect(clearButton).toHaveClass('hover:bg-subtle')
+    expect(clearButton.querySelector('svg')).toHaveClass('group-hover:text-accent')
 
     const submitButton = screen.getByRole('button', { name: 'Найти' })
-    expect(submitButton).toHaveClass('hover:bg-[#F3F3F3]', 'hover:text-[#E30C5C]')
+    expect(submitButton).toHaveClass('hover:bg-subtle', 'hover:text-accent')
   })
 
   it('pre-fills the input from defaultValue', () => {
