@@ -1,6 +1,7 @@
 import {
   useCallback,
   useEffect,
+  useId,
   useMemo,
   useRef,
   useState,
@@ -44,6 +45,7 @@ export function SearchBar({
   )
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const dropdownId = useId()
 
   const filteredResults = useMemo(() => filterResultsByQuery(results, query), [results, query])
 
@@ -84,10 +86,10 @@ export function SearchBar({
         handleClear()
       } else if (e.key === 'ArrowDown' && isOpen) {
         e.preventDefault()
-        document.getElementById('search-dropdown-listbox')?.focus()
+        document.getElementById(dropdownId)?.focus()
       }
     },
-    [handleClear, isOpen],
+    [dropdownId, handleClear, isOpen],
   )
 
   const handleSelect = useCallback(
@@ -134,7 +136,7 @@ export function SearchBar({
         aria-label="Поиск вакцин, инфекций, противопоказаний"
         aria-autocomplete="list"
         aria-expanded={isOpen}
-        aria-controls={isOpen ? 'search-dropdown-listbox' : undefined}
+        aria-controls={isOpen ? dropdownId : undefined}
         className="flex-1 min-w-0 bg-transparent outline-none font-sans text-sm leading-[130%] text-fg placeholder:text-fg-muted focus:ring-0"
       />
       {query && (
@@ -142,19 +144,19 @@ export function SearchBar({
           type="button"
           aria-label="Очистить поиск"
           onClick={handleClear}
-          className="group shrink-0 inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-[#F3F3F3]"
+          className="group shrink-0 inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-subtle"
         >
           <XmarkIcon
             width={24}
             height={24}
-            className="text-[#A6A6A6] group-hover:text-[#E30C5C] transition-colors"
+            className="text-fg-muted group-hover:text-accent transition-colors"
           />
         </button>
       )}
       {query && isOpen && (
         <button
           type="submit"
-          className="shrink-0 inline-flex items-center justify-center h-8 px-3 rounded-pill bg-[#E30C5C] hover:bg-[#F3F3F3] text-white hover:text-[#E30C5C] text-sm font-medium transition-colors"
+          className="shrink-0 inline-flex items-center justify-center h-8 px-3 rounded-pill bg-accent hover:bg-subtle text-card hover:text-accent text-sm font-medium transition-colors"
         >
           Найти
         </button>
@@ -178,6 +180,7 @@ export function SearchBar({
         onSelect={handleSelect}
         onClose={handleClose}
         isLoading={isLoading}
+        listboxId={dropdownId}
       />
     </form>
   )

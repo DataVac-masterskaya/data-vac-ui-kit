@@ -77,10 +77,7 @@ describe('SearchDropdown', () => {
     await userEvent.click(screen.getByText('Бактривир'))
 
     expect(onSelect).toHaveBeenCalledTimes(1)
-    expect(onSelect).toHaveBeenCalledWith(
-      { id: 'v1', label: 'Бактривир' },
-      mockResults[0],
-    )
+    expect(onSelect).toHaveBeenCalledWith({ id: 'v1', label: 'Бактривир' }, mockResults[0])
   })
 
   it('shows spinner when loading', () => {
@@ -147,7 +144,7 @@ describe('SearchDropdown', () => {
     )
 
     const option = screen.getByRole('option', { name: 'Бактривир' })
-    expect(option).toHaveClass('bg-[#F3F3F3]', 'hover:bg-[#F3F3F3]', 'hover:text-accent')
+    expect(option).toHaveClass('bg-subtle', 'hover:bg-subtle', 'hover:text-accent')
     expect(option.querySelector('span')).toHaveClass('group-hover:text-accent')
   })
 
