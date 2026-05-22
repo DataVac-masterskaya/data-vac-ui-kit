@@ -5,14 +5,24 @@ import { Switch } from '../Switch'
 import { useTheme } from '../ThemeProvider'
 
 export function ThemeToggle({ className }: { className?: string }) {
-  const { themeName, toggleTheme } = useTheme()
-  const isDark = themeName === 'dark'
+  const { themeName, resolvedTheme, setTheme, toggleTheme } = useTheme()
+  const isDark = resolvedTheme === 'dark'
+  const isSystem = themeName === 'system'
   const [mounted, setMounted] = useState(false)
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
   }, [])
   if (!mounted) return null
+
+  const handleToggle = () => {
+    if (isSystem) {
+      // Если сейчас system, переключаем на противоположную системной
+      setTheme(isDark ? 'light' : 'dark')
+    } else {
+      toggleTheme()
+    }
+  }
 
   return (
     <>
@@ -21,9 +31,9 @@ export function ThemeToggle({ className }: { className?: string }) {
         <span className={cn('text-xs font-sans', isDark ? 'text-fg-muted' : 'text-fg')}>День</span>
         <Switch
           checked={isDark}
-          onChange={() => toggleTheme()}
+          onChange={() => handleToggle()}
           size="sm"
-          trackClassName={isDark ? 'bg-neutral' : 'bg-subtle'}
+          trackClassName={isDark ? 'bg-neutral' : 'bg-card'}
           thumbClassName={isDark ? 'bg-accent' : 'bg-neutral'}
           aria-label={isDark ? 'Включить светлую тему' : 'Включить тёмную тему'}
         />
@@ -35,7 +45,7 @@ export function ThemeToggle({ className }: { className?: string }) {
         role="switch"
         aria-checked={isDark}
         aria-label={isDark ? 'Включить светлую тему' : 'Включить тёмную тему'}
-        onClick={toggleTheme}
+        onClick={handleToggle}
         className={cn(
           'relative flex md:hidden w-[58px] h-8 rounded-pill bg-neutral overflow-hidden',
           className,
@@ -49,11 +59,21 @@ export function ThemeToggle({ className }: { className?: string }) {
           )}
         />
         {/* Солнце — светлый stroke, виден на тёмном фоне, сливается с белым кружком */}
-        <span className="absolute left-2 top-1/2 -translate-y-1/2 pointer-events-none text-white">
+        <span
+          className={cn(
+            'absolute left-1 top-1/2 -translate-y-1/2 pointer-events-none',
+            isDark ? 'text-white' : 'text-black',
+          )}
+        >
           <SunIcon />
         </span>
         {/* Луна — тёмный stroke, видна на белом кружке, сливается с тёмным фоном */}
-        <span className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-fg">
+        <span
+          className={cn(
+            'absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none',
+            isDark ? 'text-black' : 'text-white',
+          )}
+        >
           <MoonStarsIcon />
         </span>
       </button>
