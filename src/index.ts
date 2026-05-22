@@ -63,4 +63,7 @@ export { defaultTheme, darkTheme, themes, tokensToCssVars } from './themes'
 export type { ThemeTokens, ThemeName } from './themes'
 
 // TagFilter
-export { TagFilter } from './components/TagFilter';
+export { TagFilter } from './components/TagFilter'
+
+// Select
+export { Select } from './components/Select'
