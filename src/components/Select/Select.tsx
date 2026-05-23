@@ -51,6 +51,7 @@ export function Select({
       <RadixSelect.Portal>
         <RadixSelect.Content
           position="popper"
+          sideOffset={4}
           className={cn(
             'p-2 w-82 text-fg bg-card rounded-input shadow-[0px_2px_12px_rgb(0_0_0/0.08)]',
             contentClassName,
