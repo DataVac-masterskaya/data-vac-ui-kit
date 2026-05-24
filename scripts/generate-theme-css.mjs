@@ -62,6 +62,8 @@ const themeContent = groups
 // ─── output ──────────────────────────────────────────────────────────────────
 
 const css = `\
+@import 'tailwindcss';
+
 @font-face {
   font-family: 'Inter Tight';
   src: url('./fonts/InterTight-VariableFont_wght.woff2') format('woff2');
@@ -69,8 +71,6 @@ const css = `\
   font-style: normal;
   font-display: swap;
 }
-
-@import 'tailwindcss';
 
 /* ==========================================================================
    GENERATED FILE — не редактировать вручную!

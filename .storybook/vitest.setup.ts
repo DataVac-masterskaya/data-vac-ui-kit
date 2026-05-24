@@ -1,2 +1,4 @@
-// Аннотации применяются автоматически через @storybook/addon-vitest начиная с v10.3
-// Файл можно оставить пустым или добавить сюда кастомные глобальные настройки
+import { INTERNAL_DEFAULT_PROJECT_ANNOTATIONS, setProjectAnnotations } from '@storybook/react'
+import preview from './preview'
+
+setProjectAnnotations([INTERNAL_DEFAULT_PROJECT_ANNOTATIONS, preview])
