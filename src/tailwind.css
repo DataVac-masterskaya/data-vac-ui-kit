@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 @font-face {
   font-family: 'Inter Tight';
   src: url('./fonts/InterTight-VariableFont_wght.woff2') format('woff2');
@@ -5,8 +7,6 @@
   font-style: normal;
   font-display: swap;
 }
-
-@import 'tailwindcss';
 
 /* Force-generate responsive variants used in components (library build doesn't auto-scan TSX) */
 @source inline("md:flex md:hidden md:w-[605px] xl:w-[720px]");
