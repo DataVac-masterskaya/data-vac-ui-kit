@@ -12,13 +12,12 @@ import {
 import { defaultTheme, themes } from '../../themes'
 import type { ThemeName, ThemeTokens } from '../../themes'
 
-// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 export type ExtendedThemeName = ThemeName | 'system'
 interface ThemeContextValue {
   themeName: ExtendedThemeName
   resolvedTheme: ThemeName
   tokens: ThemeTokens
-  setTheme: (name: ThemeName) => void
+  setTheme: (name: ExtendedThemeName) => void
   toggleTheme: () => void
 }
 
@@ -69,8 +68,10 @@ export function ThemeProvider({
 
   const [themeName, setThemeName] = useState<ExtendedThemeName>(() => getInitialTheme(initialTheme))
 
-  // Вычисляем фактическую тему (light/dark) и токены
-  const resolvedTheme = useMemo(() => resolveThemeName(themeName), [themeName])
+  const [resolvedTheme, setResolvedTheme] = useState<ThemeName>(() =>
+    resolveThemeName(getInitialTheme(initialTheme)),
+  )
+
   const tokens = allThemes[resolvedTheme] ?? defaultTheme
 
   // Эффект: подписка на изменение системной темы
@@ -79,10 +80,7 @@ export function ThemeProvider({
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
-    const handleChange = () => {
-      // Force re-render для обновления resolvedTheme
-      setThemeName('system')
-    }
+    const handleChange = () => setResolvedTheme(getSystemTheme())
 
     mediaQuery.addEventListener('change', handleChange)
     return () => mediaQuery.removeEventListener('change', handleChange)
