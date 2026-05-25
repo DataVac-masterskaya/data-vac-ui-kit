@@ -67,3 +67,4 @@ export { TagFilter } from './components/TagFilter'
 
 // Select
 export { Select } from './components/Select'
+export type { SelectOption, SelectProps } from './components/Select'
