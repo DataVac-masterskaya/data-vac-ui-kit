@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from 'storybook/test'
 import { SearchDropdown } from './SearchDropdown'
@@ -43,7 +43,7 @@ const meta = {
   title: 'Components/SearchDropdown',
   component: SearchDropdown,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
     viewport: { defaultViewport: 'responsive' },
   },
   tags: ['autodocs'],
@@ -66,7 +66,14 @@ export default meta
 type Story = StoryObj<typeof SearchDropdown>
 
 function DropdownStory(args: Partial<SearchDropdownProps>) {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    if (!open) return
+    const close = () => setOpen(false)
+    window.addEventListener('scroll', close, { passive: true })
+    return () => window.removeEventListener('scroll', close)
+  }, [open])
 
   return (
     <SearchDropdown

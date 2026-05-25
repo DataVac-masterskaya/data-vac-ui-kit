@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from 'storybook/test'
 import { SearchBar } from './SearchBar'
@@ -43,7 +43,7 @@ const meta = {
   title: 'Components/SearchBar',
   component: SearchBar,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
     viewport: { defaultViewport: 'responsive' },
   },
   tags: ['autodocs'],
@@ -66,13 +66,32 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+function useCloseOnScroll() {
+  const [key, setKey] = useState(0)
+  useEffect(() => {
+    const close = () => setKey((k) => k + 1)
+    window.addEventListener('scroll', close, { passive: true })
+    return () => window.removeEventListener('scroll', close)
+  }, [])
+  return key
+}
+
 export const Default: Story = {
   render: function DefaultStory() {
+    const key = useCloseOnScroll()
     const [results, setResults] = useState<typeof mockResults>([])
     const handleSearch = (query: string) => {
       setResults(query.trim().length > 0 ? mockResults : [])
     }
-    return <SearchBar results={results} onSearch={handleSearch} onSelect={fn()} onSubmit={fn()} />
+    return (
+      <SearchBar
+        key={key}
+        results={results}
+        onSearch={handleSearch}
+        onSelect={fn()}
+        onSubmit={fn()}
+      />
+    )
   },
 }
 
@@ -88,22 +107,19 @@ export const WithValue: Story = {
 }
 
 export const WithResults: Story = {
-  args: {
-    defaultValue: 'в',
-    results: mockResults,
-    onSearch: fn(),
-    onSelect: fn(),
-    onSubmit: fn(),
+  render: function WithResultsStory() {
+    const key = useCloseOnScroll()
+    return (
+      <SearchBar key={key} results={mockResults} onSearch={fn()} onSelect={fn()} onSubmit={fn()} />
+    )
   },
 }
 
 export const Loading: Story = {
-  args: {
-    defaultValue: 'в',
-    results: [],
-    isLoading: true,
-    onSearch: fn(),
-    onSelect: fn(),
-    onSubmit: fn(),
+  render: function LoadingStory() {
+    const key = useCloseOnScroll()
+    return (
+      <SearchBar key={key} results={[]} isLoading onSearch={fn()} onSelect={fn()} onSubmit={fn()} />
+    )
   },
 }
