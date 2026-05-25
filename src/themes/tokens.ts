@@ -31,4 +31,4 @@ export interface ThemeTokens {
   }
 }
 
-export type ThemeName = string
+export type ThemeName = 'light' | 'dark'
