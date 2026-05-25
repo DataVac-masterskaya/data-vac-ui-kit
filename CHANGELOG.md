@@ -1,3 +1,15 @@
+## [1.6.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.6.0...v1.6.1) (2026-05-25)
+
+
+### Bug Fixes
+
+* address search dropdown review feedback ([6458a85](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/6458a8587ec1f31f68d4c2d4dd98bd744d3c7541))
+* enhance SearchBar and SearchDropdown with scroll close functionality and update layout style ([5e863ad](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/5e863ad0c7f4c3689a05cff9972cbd51620c5e4c))
+* **tests:** repair storybook runner ([878944c](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/878944ccb59278955cbca2000862d52e8fc2aeb5))
+* update dependencies and add pnpm support ([58b2afa](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/58b2afa159c795bc3a675bb1e8abf019cf83d49e))
+* update package-lock.json to use exact versioning for dependencies and devDependencies ([0243592](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/024359273fe90cf399b7886a56135e4070dfc2ef))
+* доработка SearchBar и SearchDropdown по макету и ТЗ ([5ff1add](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/5ff1addb20ee09f6cb34ba9dbc262c21abbd9df5))
+
 # [1.6.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.5.0...v1.6.0) (2026-05-19)
 
 
