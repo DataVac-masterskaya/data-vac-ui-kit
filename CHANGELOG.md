@@ -1,3 +1,16 @@
+# [1.7.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.6.1...v1.7.0) (2026-05-26)
+
+
+### Bug Fixes
+
+* **select:** add gap between trigger and content ([1bc845e](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/1bc845e010210f659a9961e3d4c4b329c0258ef0))
+* **select:** fixed versions of dependencies ([124d759](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/124d7593be7677bc5c0a4fb2e1595780caf64800))
+
+
+### Features
+
+* **select:** add Select component ([b1aa9e0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/b1aa9e089d90d93010145af6068aa031fc880521))
+
 ## [1.6.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.6.0...v1.6.1) (2026-05-25)
 
 
