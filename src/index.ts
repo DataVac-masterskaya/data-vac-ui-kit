@@ -44,6 +44,7 @@ export { EmptyState, ErrorState } from './components/States'
 
 // Tabs
 export { Tabs } from './components/Tabs'
+export type { TabItem, TabsProps } from './components/Tabs'
 
 // Administration methods
 export { AdministrationIcon } from './components/AdministrationIcon'
