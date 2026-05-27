@@ -37,7 +37,7 @@
       "npm run lint --",
       "vitest run --passWithNoTests"
     ],
-    "src/**/*": "npm run format -- --write"
+    "src/**/*": "prettier --write"
   },
   "peerDependencies": {
     "react": "^19.0.0",
