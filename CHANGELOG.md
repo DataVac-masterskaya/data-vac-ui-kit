@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.7.1...v1.7.2) (2026-05-27)
+
+
+### Bug Fixes
+
+* **lint-staged:** update format command to use prettier directly ([7ebded5](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/7ebded54491d4e5d5adc3236aa014a4ccd765d53))
+
 ## [1.7.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.7.0...v1.7.1) (2026-05-27)
 
 
