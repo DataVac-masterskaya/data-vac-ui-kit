@@ -1,3 +1,12 @@
+## [1.7.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.7.0...v1.7.1) (2026-05-27)
+
+
+### Bug Fixes
+
+* **theme-provider:** sync resolvedTheme when themeName changes ([057533b](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/057533b123a5a8baf0efde8f05462ac7a98381a3))
+* **themeToggle:** добавил системную тему ([ec1f4a5](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/ec1f4a53ebfd8d14063a0fbf6dd562fe7e27257b))
+* **themeToggle:** исправления по PR[#7](https://github.com/DataVac-masterskaya/data-vac-ui-kit/issues/7) ([fc47755](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/fc47755341df4feeb5361ed8b0f896d538ba5d43))
+
 # [1.7.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.6.1...v1.7.0) (2026-05-26)
 
 
