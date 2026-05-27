@@ -67,10 +67,9 @@ export function ThemeProvider({
   const allThemes = useMemo(() => ({ ...themes, ...customThemes }), [customThemes])
 
   const [themeName, setThemeName] = useState<ExtendedThemeName>(() => getInitialTheme(initialTheme))
+  const [systemTheme, setSystemTheme] = useState<ThemeName>(() => getSystemTheme())
 
-  const [resolvedTheme, setResolvedTheme] = useState<ThemeName>(() =>
-    resolveThemeName(getInitialTheme(initialTheme)),
-  )
+  const resolvedTheme: ThemeName = themeName === 'system' ? systemTheme : themeName
 
   const tokens = allThemes[resolvedTheme] ?? defaultTheme
 
@@ -79,8 +78,7 @@ export function ThemeProvider({
     if (themeName !== 'system') return
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-    const handleChange = () => setResolvedTheme(getSystemTheme())
+    const handleChange = () => setSystemTheme(getSystemTheme())
 
     mediaQuery.addEventListener('change', handleChange)
     return () => mediaQuery.removeEventListener('change', handleChange)
