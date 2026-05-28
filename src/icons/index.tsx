@@ -63,6 +63,24 @@ export function ArrowUpRightFromSquareIcon({ width = 24, height = 24, ...props }
   )
 }
 
+export function ArrowIcon({ width = 16, height = 16, ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      width={width}
+      height={height}
+      fill="none"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M7.99996 2.5C7.99996 2.22386 8.22382 2 8.49996 2C8.7761 2 8.99996 2.22386 8.99996 2.5V12.293L12.1464 9.14648C12.3417 8.95122 12.6582 8.95122 12.8535 9.14648C13.0487 9.34175 13.0487 9.65825 12.8535 9.85352L8.85348 13.8535C8.65822 14.0488 8.34171 14.0488 8.14645 13.8535L4.14645 9.85352C3.95118 9.65825 3.95118 9.34175 4.14645 9.14648C4.34171 8.95122 4.65822 8.95122 4.85348 9.14648L7.99996 12.293V4.89648V2.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 export function ArrowsIcon({ width = 12, height = 12, ...props }: IconProps) {
   return (
     <svg

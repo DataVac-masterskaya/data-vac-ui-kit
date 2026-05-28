@@ -69,3 +69,11 @@ export { TagFilter } from './components/TagFilter'
 // Select
 export { Select } from './components/Select'
 export type { SelectOption, SelectProps } from './components/Select'
+
+// SortControl
+export { SortControl } from './components/SortControl'
+export type { SortControlProps, SortDirection } from './components/SortControl'
+
+// DataTable
+export { DataTable } from './components/DataTable'
+export type { DataTableColumn, DataTableProps } from './components/DataTable'
