@@ -40,6 +40,26 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
   return result
 }
 
+/** Группирует колонки для мобайла: mobileHalf-соседи — в одну строку, остальные — по одному. */
+function groupMobileColumns<T>(cols: DataTableColumn<T>[]): DataTableColumn<T>[][] {
+  const groups: DataTableColumn<T>[][] = []
+  let i = 0
+  while (i < cols.length) {
+    if (cols[i].mobileHalf) {
+      const group: DataTableColumn<T>[] = []
+      while (i < cols.length && cols[i].mobileHalf) {
+        group.push(cols[i])
+        i++
+      }
+      groups.push(group)
+    } else {
+      groups.push([cols[i]])
+      i++
+    }
+  }
+  return groups
+}
+
 function getColStyle(col: DataTableColumn<unknown>): React.CSSProperties {
   return {
     width:
@@ -105,6 +125,7 @@ export function DataTableRow<T>({
 
   const visibleColumns = columns.filter((col) => !col.desktopOnly)
   const columnChunks = chunkArray(visibleColumns, tabletColumns)
+  const mobileGroups = groupMobileColumns(visibleColumns)
 
   const { desktop: desktopClass, tablet: tabletClass } = BP[desktopBreakpoint]
 
@@ -171,13 +192,17 @@ export function DataTableRow<T>({
         aria-disabled={isDisabled || undefined}
         {...interactiveProps}
       >
-        {visibleColumns.map((col, colIndex) => (
-          <div key={col.key} className="flex flex-col gap-1">
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-xs text-fg-secondary">{col.label}</span>
-              {colIndex === 0 && mobileBadge}
-            </div>
-            <div className="text-sm">{renderCell(col, row, index)}</div>
+        {mobileGroups.map((group, groupIdx) => (
+          <div key={group[0].key} className="flex gap-3 w-full">
+            {group.map((col, colIdx) => (
+              <div key={col.key} className="flex-1 flex flex-col gap-1 min-w-0">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs text-fg-secondary">{col.label}</span>
+                  {groupIdx === 0 && colIdx === 0 && mobileBadge}
+                </div>
+                <div className="text-sm">{renderCell(col, row, index)}</div>
+              </div>
+            ))}
           </div>
         ))}
       </div>

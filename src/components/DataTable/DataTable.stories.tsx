@@ -30,13 +30,23 @@ const meta: Meta<typeof DataTable> = {
     docs: {
       description: {
         component:
-          'Generic-таблица с конфигурируемыми колонками. ' +
-          'Три layout: desktop (≥ 768px) — горизонтальная строка; ' +
-          'tablet (480–767 px) — карточка с полями в несколько строк (`tabletColumns`); ' +
-          'mobile (< 480px) — вертикальная карточка. ' +
-          'Поддерживает сортировку, disabled-строки и клик по строке. ' +
-          '**DataTable не сортирует данные сам** — `onSortChange` сигнализирует родителю, ' +
-          'родитель пересортировывает `rows` и передаёт обратно.',
+          "Generic-таблица с конфигурируемыми колонками и тремя адаптивными layout'ами на основе container queries.\n\n" +
+          '## Layouts\n\n' +
+          '- **Desktop** (`desktopBreakpoint="md"` — ≥ 768 px, `"lg"` — ≥ 1024 px): горизонтальная таблица со всеми колонками\n' +
+          '- **Tablet** (480 px — breakpoint): карточки с полями в `tabletColumns` колонок на строку (по умолчанию: 3)\n' +
+          '- **Mobile** (< 480 px): вертикальные карточки; колонки с `mobileHalf: true` группируются в одну строку\n\n' +
+          '## Колонки\n\n' +
+          'Конфигурируются через массив `DataTableColumn<T>`. Ключевые поля:\n\n' +
+          '- `sortable` — включает SortControl в заголовке и кнопку сортировки в мобильном Select\n' +
+          '- `tooltip` — иконка ⓘ с всплывающей подсказкой в заголовке\n' +
+          '- `desktopOnly` — скрывает поле в планшетных и мобильных карточках\n' +
+          '- `render` — кастомный JSX в ячейке; без него выводится `row[key]`\n\n' +
+          '## Сортировка\n\n' +
+          '**DataTable не сортирует данные сам.** `onSortChange(field, direction)` сигнализирует родителю — ' +
+          'родитель пересортировывает `rows` и передаёт обратно.\n\n' +
+          '## Disabled строки\n\n' +
+          '`isRowDisabled(row)` — строка недоступна для клика, стиль меняется на `fg-muted`. ' +
+          'На мобайле вместо `mobileActionLabel` показывается `mobileDisabledLabel`.',
       },
     },
   },
@@ -149,9 +159,15 @@ const TABLET_COLUMNS: DataTableColumn<VaccineFullRow>[] = [
   },
   { key: 'infection', label: 'Инфекции', flex: 1, sortable: true },
   { key: 'route', label: 'Способ введения', flex: 1 },
-  { key: 'age', label: 'Допустимый возраст', flex: 1, tooltip: 'Минимальный возраст вакцинации' },
-  { key: 'pregnancy', label: 'При беременности и ГВ', flex: 1 },
   { key: 'contraindications', label: 'Противопоказания', flex: 1 },
+  {
+    key: 'age',
+    label: 'Допустимый возраст',
+    flex: 1,
+    tooltip: 'Минимальный возраст вакцинации',
+    mobileHalf: true,
+  },
+  { key: 'pregnancy', label: 'При беременности и ГВ', flex: 1, mobileHalf: true },
 ]
 
 // ---- Истории ----
@@ -394,17 +410,56 @@ export const DesktopOnlyColumns: Story = {
   ),
 }
 
+export const MobileColumns: Story = {
+  name: 'mobileHalf: два поля в одной строке (мобайл < 480px)',
+  globals: {
+    viewport: { value: 'mobile1' },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Колонки «Допустимый возраст» и «При беременности и ГВ» помечены `mobileHalf: true` — ' +
+          'они группируются в одну строку на мобайле. ' +
+          'Остальные колонки занимают полную ширину карточки.',
+      },
+    },
+  },
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [sortField, setSortField] = useState('name')
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
+
+    const sortedRows = sortRows(TABLET_ROWS, sortField, sortDirection)
+
+    return (
+      <div className="bg-page p-4 rounded-card">
+        <DataTable
+          columns={TABLET_COLUMNS}
+          rows={sortedRows}
+          sortField={sortField}
+          sortDirection={sortDirection}
+          onSortChange={(field, dir) => {
+            setSortField(field)
+            setSortDirection(dir)
+          }}
+          onRowClick={(row) => alert(`Открыть: ${row.name}`)}
+          getRowKey={(row) => String(row.id)}
+        />
+      </div>
+    )
+  },
+}
+
 export const DarkMode: Story = {
   name: 'Тёмная тема',
   decorators: [
-    (Story) => {
-      document.documentElement.classList.add('dark')
-      return (
-        <div className="dark bg-page p-6 rounded-card">
-          <Story />
-        </div>
-      )
-    },
+    (Story) => (
+      <div className="dark bg-page p-6 rounded-card">
+        <Story />
+      </div>
+    ),
   ],
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
