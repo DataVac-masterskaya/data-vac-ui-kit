@@ -350,6 +350,50 @@ export const WideTable: Story = {
   },
 }
 
+export const DesktopOnlyColumns: Story = {
+  name: 'desktopOnly: скрытие колонок на планшете/мобайле',
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Колонка «Инфекция» помечена `desktopOnly: true` — она видна только в desktop-таблице. ' +
+          'На планшете (480–767px) и мобайле (< 480px) поле исчезает из карточки. ' +
+          'Используйте это для второстепенных данных, которые не нужны на узком экране.',
+      },
+    },
+  },
+  render: () => (
+    <div className="bg-page p-6 rounded-card">
+      <DataTable
+        columns={[
+          {
+            key: 'name',
+            label: 'Название',
+            flex: 2,
+            sortable: true,
+            render: (row) => <span className="font-medium">{row.name}</span>,
+          },
+          {
+            key: 'infection',
+            label: 'Инфекция',
+            flex: 2,
+            desktopOnly: true,
+          },
+          {
+            key: 'age',
+            label: 'Возраст',
+            width: 120,
+            tooltip: 'Минимальный допустимый возраст вакцинации',
+          },
+        ]}
+        rows={DEMO_ROWS}
+        onRowClick={(row) => alert(`Открыть: ${row.name}`)}
+        getRowKey={(row) => String(row.id)}
+      />
+    </div>
+  ),
+}
+
 export const DarkMode: Story = {
   name: 'Тёмная тема',
   decorators: [
