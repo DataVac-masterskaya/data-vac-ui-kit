@@ -15,6 +15,7 @@
 
   { "path": "colors.border", "cssVar": "--color-border" },
   { "path": "colors.link", "cssVar": "--color-link" },
+  { "path": "colors.warning", "cssVar": "--color-warning" },
 
   { "path": "radius.tooltip", "cssVar": "--radius-tooltip" },
   { "path": "radius.icon", "cssVar": "--radius-icon" },

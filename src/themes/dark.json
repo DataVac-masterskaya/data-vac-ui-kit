@@ -15,7 +15,8 @@
     "neutral": "#4F5153",
 
     "border": "#3A3A3A",
-    "link": "#F31667"
+    "link": "#F31667",
+    "warning": "#FBAA4D"
   },
   "radius": {
     "tooltip": "4px",
