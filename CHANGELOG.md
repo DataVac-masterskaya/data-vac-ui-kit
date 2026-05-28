@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.7.2...v1.8.0) (2026-05-28)
+
+
+### Features
+
+* **data-table:** добавить DataTable и SortControl с адаптивными layout'ами ([178a940](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/178a9409f7024ca7222662511bcfd06e034a5d8c))
+* **data-table:** добавить mobileHalf и улучшить stories/docs ([cdc362f](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/cdc362f6a443480618b82c9445ce0718024cfb03))
+* **theme:** добавить токен warning (#FB9A40) для оранжевого цвета ([7050b66](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/7050b66943fdea68e05993b9659ede0507f71dfe)), closes [#FB9A40](https://github.com/DataVac-masterskaya/data-vac-ui-kit/issues/FB9A40) [#10](https://github.com/DataVac-masterskaya/data-vac-ui-kit/issues/10) [#FB9A40](https://github.com/DataVac-masterskaya/data-vac-ui-kit/issues/FB9A40) [#FBAA4D](https://github.com/DataVac-masterskaya/data-vac-ui-kit/issues/FBAA4D)
+
 ## [1.7.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.7.1...v1.7.2) (2026-05-27)
 
 
