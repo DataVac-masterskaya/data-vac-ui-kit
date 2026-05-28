@@ -35,6 +35,11 @@ export interface DataTableColumn<T = Record<string, unknown>> {
    * В планшетных и мобильных карточках колонка скрывается.
    */
   desktopOnly?: boolean
+  /**
+   * На мобайле (< 480px) колонка занимает половину ширины.
+   * Соседние `mobileHalf`-колонки группируются в одну строку.
+   */
+  mobileHalf?: boolean
 }
 
 export interface DataTableProps<T = Record<string, unknown>> {
