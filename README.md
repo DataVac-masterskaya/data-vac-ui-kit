@@ -40,7 +40,7 @@ npm install @datavac/ui-kit
 
 ```bash
 npm install
-npm run dev        # watch mode
+npm run dev       # watch mode
 npm run storybook  # компонент-документация на :6006
 npm test           # тесты
 npm run lint       # линтер
