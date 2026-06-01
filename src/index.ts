@@ -77,3 +77,6 @@ export type { SortControlProps, SortDirection } from './components/SortControl'
 // DataTable
 export { DataTable } from './components/DataTable'
 export type { DataTableColumn, DataTableProps } from './components/DataTable'
+
+// AlphabetFilter
+export { AlphabetFilter } from './components/AlphabetFilter';
