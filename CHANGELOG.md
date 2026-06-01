@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.8.0...v1.8.1) (2026-06-01)
+
+
+### Bug Fixes
+
+* **theme:** восстановить [@custom-variant](https://github.com/custom-variant), [@source](https://github.com/source) inline и [@keyframes](https://github.com/keyframes) в generate-скрипте ([2660d9e](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/2660d9ecb3dfa362e4a2fbab8db147a0370fdd81))
+
 # [1.8.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.7.2...v1.8.0) (2026-05-28)
 
 
