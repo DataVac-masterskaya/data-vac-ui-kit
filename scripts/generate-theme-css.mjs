@@ -64,6 +64,9 @@ const themeContent = groups
 const css = `\
 @import 'tailwindcss';
 
+/* Класс-based dark mode (переключается через .dark на <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
   font-family: 'Inter Tight';
   src: url('./fonts/InterTight-VariableFont_wght.woff2') format('woff2');
@@ -71,6 +74,17 @@ const css = `\
   font-style: normal;
   font-display: swap;
 }
+
+/* Force-generate responsive variants used in components (library build doesn't auto-scan TSX) */
+@source inline("md:w-[605px] xl:w-[720px]");
+/* DataTable breakpoints — md/lg desktop + tablet/mobile */
+@source inline("hidden md:flex md:hidden hidden lg:flex lg:hidden min-[480px]:flex min-[480px]:hidden");
+/* SortControl + DataTable header colors (kebab-case CSS vars) */
+@source inline("text-fg text-fg-muted text-fg-secondary hover:text-fg-secondary dark:text-fg-secondary dark:text-fg-muted text-interactive");
+/* DataTable tooltip icon hover + group-hover (non-sortable column with tooltip) */
+@source inline("hover:text-accent group group-hover:text-accent transition-colors");
+/* Arrow icon rotation for SortControl */
+@source inline("rotate-180 rotate-0");
 
 /* ==========================================================================
    GENERATED FILE — не редактировать вручную!
@@ -80,6 +94,28 @@ const css = `\
 
 @theme {
 ${themeContent}
+
+  /* Accordion height animation (uses the Radix CSS variable) */
+  --animate-accordion-down: accordion-down 0.25s ease-out;
+  --animate-accordion-up: accordion-up 0.25s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
 
 /* Тёмная тема — только значения, отличающиеся от светлой */
