@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.8.1...v1.9.0) (2026-06-07)
+
+
+### Features
+
+* update drawer adaptive size and padding ([0fc2332](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/0fc233242fdafc42a48f2052927b5447e9beefee))
+
 ## [1.8.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.8.0...v1.8.1) (2026-06-01)
 
 
