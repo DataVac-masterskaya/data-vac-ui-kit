@@ -1,3 +1,11 @@
+# [1.10.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.9.0...v1.10.0) (2026-06-08)
+
+
+### Features
+
+* **Accordion:** add FAQStyle story — card-wrapped items with pink/grey icon ([f3e1c93](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/f3e1c93b374dfe06e971b5273ea543206bcf2c68))
+* **Accordion:** add titleClassName, iconClassName, contentClassName props to AccordionItem ([ec09ef1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/ec09ef1776dbe217a638708e8adfface90cdf46a))
+
 # [1.9.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.8.1...v1.9.0) (2026-06-07)
 
 
