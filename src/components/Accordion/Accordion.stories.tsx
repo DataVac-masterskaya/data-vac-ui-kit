@@ -101,7 +101,7 @@ export const FAQStyle: Story = {
             title={item.title}
             value={item.value}
             titleClassName="text-xl font-medium py-0"
-            iconClassName="text-accent w-6 h-6"
+            iconClassName="text-accent"
             contentClassName="pt-6 pb-0 text-sm"
           >
             {item.content}
