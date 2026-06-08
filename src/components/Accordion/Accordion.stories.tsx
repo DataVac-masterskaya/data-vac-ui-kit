@@ -73,3 +73,47 @@ export const MultipleOpen: Story = {
     </Accordion>
   ),
 }
+
+export const FAQStyle: Story = {
+  name: 'FAQ — стиль страницы поддержки',
+  render: () => (
+    <Accordion className="max-w-[588px]">
+      {[
+        {
+          value: '1',
+          title: 'Почему вы не получаете гранты и просите жертвовать физических лиц?',
+          content:
+            'Мы работаем над всеми видами фандрейзинга, в том числе над грантами, однако гранты от государства и коммерческих компаний не обеспечивают рутинную административную работу НКО — их можно потратить только на один конкретный проект. Увы, но общие расходы НКО можно обеспечить только пожертвованиями физических лиц.',
+        },
+        {
+          value: '2',
+          title:
+            'У меня нет денег / я не готов(а) помогать деньгами, но я хочу вам помочь. Что я могу сделать?',
+          content:
+            'Для более чем сотни вакцин мы обработали четыре ключевых параметра: инфекции, возраст, противопоказания и способы введения. Но мы хотим сделать приложение ещё удобнее — для этого нам нужна ваша помощь.',
+        },
+      ].map((item) => (
+        <div
+          key={item.value}
+          className="bg-card rounded-xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)]"
+        >
+          <AccordionItem
+            title={item.title}
+            value={item.value}
+            titleClassName="text-xl font-medium py-0"
+            iconClassName="text-accent w-6 h-6"
+            contentClassName="pt-6 pb-0 text-sm"
+          >
+            {item.content}
+          </AccordionItem>
+        </div>
+      ))}
+    </Accordion>
+  ),
+  play: async ({ canvas, userEvent }) => {
+    const firstTrigger = canvas.getByRole('button', { name: /почему вы не получаете гранты/i })
+    await userEvent.click(firstTrigger)
+    const content = await canvas.findByText(/всеми видами фандрейзинга/i)
+    await expect(content).toBeVisible()
+  },
+}
