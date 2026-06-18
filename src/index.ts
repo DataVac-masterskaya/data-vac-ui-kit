@@ -80,3 +80,4 @@ export type { DataTableColumn, DataTableProps } from './components/DataTable'
 
 // AlphabetFilter
 export { AlphabetFilter } from './components/AlphabetFilter';
+export type { AlphabetFilterProps } from './components/AlphabetFilter';
