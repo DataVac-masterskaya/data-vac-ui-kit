@@ -1,3 +1,16 @@
+# [1.11.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.10.0...v1.11.0) (2026-06-19)
+
+
+### Bug Fixes
+
+* **alphabet-filter:** add language toggle with design fixes. ([4c5f733](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/4c5f73358bc3135b5d2ed8d0b7279caffc2d8197))
+* **alphabet-filter:** remove redundant font-normal class ([b8709e0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/b8709e00fa3e7dffb4cc0fb546aaf552e826edb0))
+
+
+### Features
+
+* **alphabet-filter:** add AlphabetFilter ([73ff45a](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/73ff45a0f0e99a3fe3bd4b2b440f97d625c37983))
+
 # [1.10.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.9.0...v1.10.0) (2026-06-08)
 
 
