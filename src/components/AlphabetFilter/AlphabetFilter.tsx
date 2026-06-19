@@ -49,7 +49,7 @@ export function AlphabetFilter({
               onClick={() => handleClick(letter, isDisabled)}
               disabled={isDisabled}
               className={cn(
-                'w-6 h-6 rounded-input text-base font-normal flex items-center justify-center transition-colors',
+                'w-6 h-6 rounded-input text-base flex items-center justify-center transition-colors',
                 isActive && 'bg-accent text-white',
                 !isActive && !isDisabled && 'bg-card text-fg hover:bg-subtle',
                 isDisabled && 'bg-card text-fg-muted cursor-default'
