@@ -31,8 +31,14 @@ export function DataTable<T = Record<string, unknown>>({
   const hasSortable = sortableColumns.length > 0 && !!onSortChange
 
   const mobileOptions = sortableColumns.flatMap((col) => [
-    { value: `${col.key}::asc`, label: `По ${col.label} А – Я` },
-    { value: `${col.key}::desc`, label: `По ${col.label} Я – А` },
+    {
+      value: `${col.key}::asc`,
+      label: `По ${col.sortLabel || col.label} А – Я`,
+    },
+    {
+      value: `${col.key}::desc`,
+      label: `По ${col.sortLabel || col.label} Я – А`,
+    },
   ])
 
   const mobileSortValue =
@@ -58,8 +64,7 @@ export function DataTable<T = Record<string, unknown>>({
             value={mobileSortValue}
             onChange={handleMobileChange}
             icon={<ArrowDownArrowUpIcon width={16} height={16} className="text-accent" />}
-            triggerClassName="flex-1 min-w-0"
-            contentClassName="w-full"
+            contentClassName="w-[var(--radix-select-trigger-width)] min-w-[var(--radix-select-trigger-width)]"
           />
         </div>
       )}
