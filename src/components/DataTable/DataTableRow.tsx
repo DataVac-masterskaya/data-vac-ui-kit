@@ -149,7 +149,7 @@ export function DataTableRow<T>({
     <>
       {/* Desktop */}
       <div
-        className={cn(desktopClass, 'items-center px-3 gap-5', rowPadding, rowBaseClass)}
+        className={cn(desktopClass, 'items-start px-3 gap-5', rowPadding, rowBaseClass)}
         aria-disabled={isDisabled || undefined}
         {...interactiveProps}
       >

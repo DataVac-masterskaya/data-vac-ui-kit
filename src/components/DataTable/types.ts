@@ -20,6 +20,8 @@ export type DesktopBreakpoint = 'md' | 'lg'
 export interface DataTableColumn<T = Record<string, unknown>> {
   key: string
   label: string
+  /** Для отображения с верным склонением в выпадающем Select-компоненте */
+  sortLabel?: string
   /** Фиксированная ширина колонки в px или любая CSS-строка */
   width?: string | number
   /** flex-grow для колонки (растягивается пропорционально) */

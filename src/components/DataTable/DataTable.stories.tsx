@@ -89,6 +89,7 @@ const VACCINE_COLUMNS: DataTableColumn<VaccineRow>[] = [
   {
     key: 'name',
     label: 'Название',
+    sortLabel: 'названию',
     flex: 2,
     sortable: true,
     render: (row) => <span className="font-medium">{row.name}</span>,
@@ -96,6 +97,7 @@ const VACCINE_COLUMNS: DataTableColumn<VaccineRow>[] = [
   {
     key: 'infection',
     label: 'Инфекция',
+    sortLabel: 'инфекции',
     flex: 2,
     sortable: true,
   },
@@ -153,11 +155,12 @@ const TABLET_COLUMNS: DataTableColumn<VaccineFullRow>[] = [
   {
     key: 'name',
     label: 'Название вакцины',
+    sortLabel: 'названию вакцины',
     flex: 1,
     sortable: true,
     render: (row) => <span className="font-semibold">{row.name}</span>,
   },
-  { key: 'infection', label: 'Инфекции', flex: 1, sortable: true },
+  { key: 'infection', label: 'Инфекции', sortLabel: 'инфекции', flex: 1, sortable: true },
   { key: 'route', label: 'Способ введения', flex: 1 },
   { key: 'contraindications', label: 'Противопоказания', flex: 1 },
   {
