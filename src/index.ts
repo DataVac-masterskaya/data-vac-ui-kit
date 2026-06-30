@@ -81,3 +81,7 @@ export type { DataTableColumn, DataTableProps } from './components/DataTable'
 // AlphabetFilter
 export { AlphabetFilter } from './components/AlphabetFilter';
 export type { AlphabetFilterProps } from './components/AlphabetFilter';
+
+// ScrollToTopButton
+export { ScrollToTopButton } from './components/ScrollToTopButton'
+export type { ScrollToTopButtonProps } from './components/ScrollToTopButton'
