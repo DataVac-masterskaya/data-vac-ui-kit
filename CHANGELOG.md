@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.1...v1.11.2) (2026-06-30)
+
+
+### Bug Fixes
+
+* **dataTable:** add prop sortLabel for Select, text alignment, fix Select styles ([4f3cb0d](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/4f3cb0d4d15975ac86a48728b53949e1d635d70d))
+
 ## [1.11.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.0...v1.11.1) (2026-06-30)
 
 
