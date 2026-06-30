@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.0...v1.11.1) (2026-06-30)
+
+
+### Bug Fixes
+
+* **scroll-to-top-button:** export missing component and remove stale build cache ([d291d0f](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/d291d0fcd679b3477ca00aca827cc3ef2cf345fd))
+
 # [1.11.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.10.0...v1.11.0) (2026-06-19)
 
 
