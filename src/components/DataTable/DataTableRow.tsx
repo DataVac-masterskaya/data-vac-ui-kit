@@ -139,7 +139,7 @@ export function DataTableRow<T>({
       {isDisabled ? (
         <MinusIcon width={12} height={12} className="text-fg-muted" />
       ) : (
-        <ArrowsIcon className="text-fg rounded-full group-hover:text-interactive" />
+        <ArrowsIcon className="text-fg group-hover:text-interactive" />
       )}
     </div>
   )
