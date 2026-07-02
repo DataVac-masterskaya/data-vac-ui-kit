@@ -1,3 +1,10 @@
+## [1.11.3](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.2...v1.11.3) (2026-07-02)
+
+
+### Bug Fixes
+
+* **dataTable:** add hover icon, fix layout icon ([326979d](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/326979da3080d6ef857220510a5d5662720b583e))
+
 ## [1.11.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.1...v1.11.2) (2026-06-30)
 
 
