@@ -116,7 +116,7 @@ export function DataTableRow<T>({
     : {}
 
   const rowBaseClass = cn(
-    'bg-card rounded-xl transition-colors',
+    'group bg-card rounded-xl transition-colors',
     isDisabled ? 'text-fg-muted' : 'text-fg',
     !isDisabled && isClickable ? 'cursor-pointer hover:brightness-[0.97]' : '',
   )
@@ -130,11 +130,16 @@ export function DataTableRow<T>({
   const { desktop: desktopClass, tablet: tabletClass } = BP[desktopBreakpoint]
 
   const actionIcon = hasAction && (
-    <div className="shrink-0 flex items-center justify-center size-5 rounded-full bg-subtle">
+    <div
+      className={`
+      shrink-0 flex items-center justify-center size-5 rounded-full 
+      ${isDisabled ? 'bg-subtle' : 'bg-subtle group-hover:bg-accent'}
+    `}
+    >
       {isDisabled ? (
         <MinusIcon width={12} height={12} className="text-fg-muted" />
       ) : (
-        <ArrowsIcon className="text-fg" />
+        <ArrowsIcon className="text-fg group-hover:text-interactive" />
       )}
     </div>
   )
@@ -162,7 +167,7 @@ export function DataTableRow<T>({
             {renderCell(col, row, index)}
           </div>
         ))}
-        {hasAction && <div className="ml-auto">{actionIcon}</div>}
+        {hasAction && <div className="ml-auto self-center">{actionIcon}</div>}
       </div>
 
       {/* Tablet — 480px до desktopBreakpoint */}
