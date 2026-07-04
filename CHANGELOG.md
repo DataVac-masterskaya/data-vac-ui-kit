@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.3...v1.11.4) (2026-07-04)
+
+
+### Bug Fixes
+
+* **accordion:** add prop defaultValue ([#17](https://github.com/DataVac-masterskaya/data-vac-ui-kit/issues/17)) ([c1dc497](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/c1dc497bfd37c77a47802c84bfd5f015501a6671))
+
 ## [1.11.3](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.2...v1.11.3) (2026-07-02)
 
 
