@@ -5,11 +5,16 @@ import { cn } from '../../lib/utils'
 interface AccordionProps {
   children: ReactNode
   className?: string
+  defaultValue?: string[]
 }
 
-export function Accordion({ children, className }: AccordionProps) {
+export function Accordion({ children, className, defaultValue }: AccordionProps) {
   return (
-    <RadixAccordion.Root type="multiple" className={cn('flex flex-col gap-3', className)}>
+    <RadixAccordion.Root
+      type="multiple"
+      defaultValue={defaultValue}
+      className={cn('flex flex-col gap-3', className)}
+    >
       {children}
     </RadixAccordion.Root>
   )
