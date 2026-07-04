@@ -91,7 +91,7 @@ describe('AlphabetFilter', () => {
     expect(activeButton).toHaveAttribute('aria-pressed', 'true');
   });
 
-  it('should prioritize disabled over active when letter is both active and disabled', () => {
+  it('should prioritize disabled over active when letter is both active and disabled', async () => {
     const onChange = vi.fn();
     render(
       <AlphabetFilter
@@ -105,7 +105,7 @@ describe('AlphabetFilter', () => {
     const letterA = screen.getByText('А');
     expect(letterA).toBeDisabled();
     expect(letterA).toHaveAttribute('aria-pressed', 'false');
-    userEvent.click(letterA);
+    await userEvent.click(letterA);
     expect(onChange).not.toHaveBeenCalled();
   });
 
