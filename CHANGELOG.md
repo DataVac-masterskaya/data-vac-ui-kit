@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.4...v1.11.5) (2026-07-04)
+
+
+### Bug Fixes
+
+* **alphabet-filter:** add missing await in test to fix lint error ([21fd4af](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/21fd4af8517fdc515678175b1d27d36bbd071513))
+
 ## [1.11.4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.3...v1.11.4) (2026-07-04)
 
 
