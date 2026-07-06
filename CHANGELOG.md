@@ -1,3 +1,10 @@
+## [1.11.6](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.5...v1.11.6) (2026-07-06)
+
+
+### Bug Fixes
+
+* **search-bar:** make width responsive instead of fixed at md/xl ([247844c](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/247844c919ac19c254ba49f20ed601120fa0da3c))
+
 ## [1.11.5](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.4...v1.11.5) (2026-07-04)
 
 
