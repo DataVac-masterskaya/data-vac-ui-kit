@@ -168,7 +168,7 @@ export function SearchBar({
     <form
       role="search"
       aria-label="Поиск"
-      className={cn('w-full md:w-[605px] xl:w-[720px]', className)}
+      className={cn('w-full md:max-w-151.25 xl:max-w-180', className)}
       onSubmit={handleSubmit}
     >
       <SearchDropdown
