@@ -1,3 +1,10 @@
+## [1.11.7](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.6...v1.11.7) (2026-07-11)
+
+
+### Bug Fixes
+
+* **build:** rename utilities layer to avoid host Tailwind cascade conflict ([efc97f5](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/efc97f5a050f9faecca6aff64bce2aae2318a452))
+
 ## [1.11.6](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.5...v1.11.6) (2026-07-06)
 
 
