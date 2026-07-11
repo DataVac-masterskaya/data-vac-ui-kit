@@ -1,10 +1,23 @@
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin'
+import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, type Plugin } from 'vite'
 import dts from 'vite-plugin-dts'
 import svgr from 'vite-plugin-svgr'
+
+function renameUtilitiesLayer(): Plugin {
+  return {
+    name: 'rename-utilities-layer',
+    closeBundle() {
+      const cssPath = resolve(__dirname, 'dist/index.css')
+      const css = readFileSync(cssPath, 'utf-8')
+      const patched = css.replaceAll('@layer utilities{', '@layer ui-kit-utilities{')
+      writeFileSync(cssPath, patched, 'utf-8')
+    },
+  }
+}
 
 export default defineConfig({
   plugins: [
@@ -16,6 +29,7 @@ export default defineConfig({
       include: ['src'],
       exclude: ['src/**/*.stories.tsx', 'src/**/*.test.tsx'],
     }),
+    renameUtilitiesLayer(),
   ],
   build: {
     lib: {
