@@ -13,7 +13,9 @@ function renameUtilitiesLayer(): Plugin {
     closeBundle() {
       const cssPath = resolve(__dirname, 'dist/index.css')
       const css = readFileSync(cssPath, 'utf-8')
-      const patched = css.replaceAll('@layer utilities{', '@layer ui-kit-utilities{')
+      const patched =
+        '@source "./index.js";\n' +
+        css.replaceAll('@layer utilities{', '@layer ui-kit-utilities{')
       writeFileSync(cssPath, patched, 'utf-8')
     },
   }
