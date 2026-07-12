@@ -13,7 +13,7 @@ export type TabsProps = {
   activeId: string
   onChange: (id: string) => void
   className?: string
-  tabClassName?: string
+  tabClassName?: string | ((active: boolean) => string)
   listClassName?: string
   contentClassName?: string
 }
@@ -38,7 +38,10 @@ export function Tabs({
           <RadixTabs.Trigger
             key={tab.id}
             value={tab.id}
-            className={cn('transition-all', tabClassName)}
+            className={cn(
+              'transition-all',
+              typeof tabClassName === 'function' ? tabClassName(tab.id === activeId) : tabClassName,
+            )}
           >
             {tab.label}
           </RadixTabs.Trigger>
