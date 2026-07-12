@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.12.1...v1.12.2) (2026-07-12)
+
+
+### Bug Fixes
+
+* **vite:** prepend source declaration in CSS patching process ([dc7b567](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/dc7b567057c7f964c1c7513e086c0486f292988e))
+
 ## [1.12.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.12.0...v1.12.1) (2026-07-12)
 
 
