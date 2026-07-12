@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.7...v1.12.0) (2026-07-12)
+
+
+### Features
+
+* **Drawer:** add controlled open/onOpenChange props ([6c560c9](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/6c560c90c9b3390bbf9a40a79493ee79e4499020))
+
 ## [1.11.7](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.6...v1.11.7) (2026-07-11)
 
 
