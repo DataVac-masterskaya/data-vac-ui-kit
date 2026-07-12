@@ -73,6 +73,11 @@ export interface DataTableProps<T = Record<string, unknown>> {
    */
   mobileDisabledLabel?: string
   /**
+   * Содержимое тултипа, который появляется при наведении на иконку минуса
+   * в десктопной и планшетной строке, когда строка disabled.
+   */
+  disabledTooltip?: ReactNode
+  /**
    * Количество колонок в строке планшетной карточки.
    * Если колонок больше — они переносятся на новые строки с тем же шагом.
    * @default 3

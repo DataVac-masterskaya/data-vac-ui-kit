@@ -23,6 +23,7 @@ export function DataTable<T = Record<string, unknown>>({
   onSortChange,
   mobileActionLabel = 'Подробнее',
   mobileDisabledLabel = 'Нет сведений',
+  disabledTooltip,
   tabletColumns = 3,
   desktopBreakpoint = 'md',
   className,
@@ -132,6 +133,7 @@ export function DataTable<T = Record<string, unknown>>({
             hasAction={hasAction}
             mobileActionLabel={mobileActionLabel}
             mobileDisabledLabel={mobileDisabledLabel}
+            disabledTooltip={disabledTooltip}
             tabletColumns={tabletColumns}
             desktopBreakpoint={desktopBreakpoint}
             onClick={onRowClick ? () => onRowClick(row) : undefined}

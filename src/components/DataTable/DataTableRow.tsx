@@ -2,6 +2,7 @@
 import { KeyboardEvent, ReactNode } from 'react'
 import { cn } from '../../lib/utils'
 import { ArrowsIcon, MinusIcon } from '../../icons'
+import { Tooltip } from '../Tooltip'
 import { DataTableColumn, DesktopBreakpoint } from './types'
 
 interface DataTableRowProps<T> {
@@ -13,6 +14,7 @@ interface DataTableRowProps<T> {
   mobileActionLabel?: string
   /** @default "Нет сведений" */
   mobileDisabledLabel?: string
+  disabledTooltip?: ReactNode
   /** @default 3 */
   tabletColumns?: number
   /** @default 'md' */
@@ -89,6 +91,7 @@ export function DataTableRow<T>({
   hasAction = false,
   mobileActionLabel = 'Подробнее',
   mobileDisabledLabel = 'Нет сведений',
+  disabledTooltip,
   tabletColumns = 3,
   desktopBreakpoint = 'md',
   onClick,
@@ -129,20 +132,25 @@ export function DataTableRow<T>({
 
   const { desktop: desktopClass, tablet: tabletClass } = BP[desktopBreakpoint]
 
-  const actionIcon = hasAction && (
-    <div
-      className={`
-      shrink-0 flex items-center justify-center size-5 rounded-full 
-      ${isDisabled ? 'bg-subtle' : 'bg-subtle group-hover:bg-accent'}
-    `}
-    >
-      {isDisabled ? (
-        <MinusIcon width={12} height={12} className="text-fg-muted" />
-      ) : (
-        <ArrowsIcon className="text-fg group-hover:text-interactive" />
-      )}
+  const disabledIcon = (
+    <div className="shrink-0 flex items-center justify-center size-5 rounded-full bg-subtle">
+      <MinusIcon width={12} height={12} className="text-fg-muted" />
     </div>
   )
+
+  const actionIcon =
+    hasAction &&
+    (isDisabled ? (
+      disabledTooltip ? (
+        <Tooltip content={disabledTooltip}>{disabledIcon}</Tooltip>
+      ) : (
+        disabledIcon
+      )
+    ) : (
+      <div className="shrink-0 flex items-center justify-center size-5 rounded-full bg-subtle group-hover:bg-accent">
+        <ArrowsIcon className="text-fg group-hover:text-interactive" />
+      </div>
+    ))
 
   const mobileBadge = hasAction && (
     <span className="shrink-0 px-2 py-0.5 bg-subtle rounded-full text-xs text-neutral whitespace-nowrap">
