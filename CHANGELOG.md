@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.12.0...v1.12.1) (2026-07-12)
+
+
+### Bug Fixes
+
+* **tabs:** update tabClassName type to support function for active state ([5917eb4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/5917eb4c20ee5b4cc1cc4965e8ca3bc22926558f))
+
 # [1.12.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.11.7...v1.12.0) (2026-07-12)
 
 
