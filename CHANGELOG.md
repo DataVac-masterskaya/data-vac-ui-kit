@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.12.2...v1.13.0) (2026-07-12)
+
+
+### Features
+
+* **DataTable:** add disabledTooltip prop for disabled row action icon ([2ff5671](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/2ff5671013a2ef4592b2e27b960d16427add0d2d))
+
 ## [1.12.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.12.1...v1.12.2) (2026-07-12)
 
 
