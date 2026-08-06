@@ -27,10 +27,10 @@ export function Drawer({ trigger, title, children, className, open, onOpenChange
             {title}
           </VaulDrawer.Title>
           <div className="font-sans text-base text-fg leading-5 flex-1">{children}</div>
-          <div className="flex items-center justify-center">
+          <div className="mt-auto flex items-center justify-center pt-4 sticky bottom-4 md:absolute md:top-4 md:right-4 md:bottom-auto md:justify-end md:pt-0">
             <VaulDrawer.Close
               aria-label="Закрыть"
-              className="absolute bottom-4 md:top-4 md:right-4 w-10 h-10 flex items-center justify-center rounded-full bg-accent xl:hover:bg-accent-hover transition-colors text-white"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-accent xl:hover:bg-accent-hover transition-colors text-white"
             >
               <svg
                 width="24"
