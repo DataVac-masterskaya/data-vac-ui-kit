@@ -49,6 +49,9 @@ export function SearchBar({
 
   const filteredResults = useMemo(() => filterResultsByQuery(results, query), [results, query])
 
+  // derive instead of sync: prevents the react-hooks/set-state-in-effect lint error
+  const effectiveIsOpen = isOpen && !forceClose
+
   useEffect(() => {
     return () => {
       if (debounceRef.current) clearTimeout(debounceRef.current)
@@ -84,12 +87,12 @@ export function SearchBar({
     (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Escape') {
         handleClear()
-      } else if (e.key === 'ArrowDown' && isOpen) {
+      } else if (e.key === 'ArrowDown' && effectiveIsOpen) {
         e.preventDefault()
         document.getElementById(dropdownId)?.focus()
       }
     },
-    [dropdownId, handleClear, isOpen],
+    [dropdownId, handleClear, effectiveIsOpen],
   )
 
   const handleSelect = useCallback(
@@ -114,7 +117,7 @@ export function SearchBar({
       data-search-dropdown-trigger
       className={cn(
         'w-full min-h-12 bg-card border border-border px-3 py-3 flex items-center gap-4 group',
-        isOpen ? 'rounded-t-card border-b-0' : 'rounded-card',
+        effectiveIsOpen ? 'rounded-t-card border-b-0' : 'rounded-card',
       )}
     >
       <span
@@ -135,8 +138,8 @@ export function SearchBar({
         placeholder={placeholder}
         aria-label="Поиск вакцин, инфекций, противопоказаний"
         aria-autocomplete="list"
-        aria-expanded={isOpen}
-        aria-controls={isOpen ? dropdownId : undefined}
+        aria-expanded={effectiveIsOpen}
+        aria-controls={effectiveIsOpen ? dropdownId : undefined}
         className="flex-1 min-w-0 bg-transparent outline-none font-sans text-sm leading-[130%] text-fg placeholder:text-fg-muted focus:ring-0"
       />
       {query && (
@@ -153,7 +156,7 @@ export function SearchBar({
           />
         </button>
       )}
-      {query && isOpen && (
+      {query && effectiveIsOpen && (
         <button
           type="submit"
           className="shrink-0 inline-flex items-center justify-center h-8 px-3 rounded-pill bg-accent hover:bg-subtle text-card hover:text-accent text-sm font-medium transition-colors"
@@ -173,7 +176,7 @@ export function SearchBar({
     >
       <SearchDropdown
         trigger={trigger}
-        open={isOpen}
+        open={effectiveIsOpen}
         onOpenChange={setIsOpen}
         query={query}
         results={filteredResults}
