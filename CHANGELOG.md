@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.0...v1.13.1) (2026-08-10)
+
+
+### Bug Fixes
+
+* **SearchBar:** ensure dropdown closes when forceClose is true ([c82c7b3](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/c82c7b30703959df0048ee7bd2361aacb94a290a))
+
 # [1.13.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.12.2...v1.13.0) (2026-07-12)
 
 
