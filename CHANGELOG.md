@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.1...v1.13.2) (2026-08-11)
+
+
+### Bug Fixes
+
+* **scroll-to-top-button:** bg-color ([e9a64c4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/e9a64c4a407e5ef8a9309ec56f576fb7b55dc53f))
+
 ## [1.13.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.0...v1.13.1) (2026-08-10)
 
 
