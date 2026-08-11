@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.2...v1.13.3) (2026-08-11)
+
+
+### Bug Fixes
+
+* **drawer:** add styles for the close button ([76f481f](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/76f481f1523e7f7e357b2f7a591af4f2e37b0c77))
+
 ## [1.13.2](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.1...v1.13.2) (2026-08-11)
 
 
