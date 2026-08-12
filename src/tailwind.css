@@ -44,6 +44,7 @@
   --color-interactive: #ffffff;
   --color-overlay: rgba(243, 243, 243, 0.7);
   --color-neutral: #4f5153;
+  --color-tooltip: rgba(0, 0, 0, 0.46);
   --color-border: #e4e4e4;
   --color-link: #e30c5c;
   --color-warning: #fb9a40;

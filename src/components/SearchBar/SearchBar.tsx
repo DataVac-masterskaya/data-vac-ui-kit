@@ -40,9 +40,7 @@ export function SearchBar({
   forceClose = false,
 }: SearchBarProps) {
   const [query, setQuery] = useState(defaultValue)
-  const [isOpen, setIsOpen] = useState(
-    !forceClose && defaultValue.trim().length >= MIN_QUERY_LENGTH,
-  )
+  const [isOpen, setIsOpen] = useState(false)
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const dropdownId = useId()
