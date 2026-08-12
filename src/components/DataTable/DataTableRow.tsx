@@ -96,20 +96,21 @@ export function DataTableRow<T>({
   desktopBreakpoint = 'md',
   onClick,
 }: DataTableRowProps<T>) {
-  const isClickable = !!onClick && !isDisabled
+  const hasClickHandler = !!onClick
+  const isClickable = hasClickHandler && !isDisabled
 
   const handleClick = () => {
-    if (isClickable) onClick()
+    if (hasClickHandler) onClick()
   }
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    if (isClickable && (e.key === 'Enter' || e.key === ' ')) {
+    if (hasClickHandler && (e.key === 'Enter' || e.key === ' ')) {
       e.preventDefault()
       onClick()
     }
   }
 
-  const interactiveProps = isClickable
+  const interactiveProps = hasClickHandler
     ? {
         role: 'button' as const,
         tabIndex: 0,
@@ -121,7 +122,8 @@ export function DataTableRow<T>({
   const rowBaseClass = cn(
     'group bg-card rounded-xl transition-colors',
     isDisabled ? 'text-fg-muted' : 'text-fg',
-    !isDisabled && isClickable ? 'cursor-pointer hover:brightness-[0.97]' : '',
+    hasClickHandler ? 'cursor-pointer' : '',
+    isClickable ? 'hover:brightness-[0.97]' : '',
   )
 
   const rowPadding = isDisabled ? 'py-[11px]' : 'py-4'
