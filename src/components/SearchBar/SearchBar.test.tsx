@@ -126,26 +126,38 @@ describe('SearchBar', () => {
   it('calls onSubmit with the current query when "Найти" is clicked', async () => {
     const onSubmit = vi.fn()
     render(<SearchBar defaultValue="корь" results={mockResults} onSubmit={onSubmit} />)
+    await userEvent.click(getInput())
     await waitFor(() => expect(screen.getByRole('button', { name: 'Найти' })).toBeInTheDocument())
     await userEvent.click(screen.getByRole('button', { name: 'Найти' }))
     expect(onSubmit).toHaveBeenCalledWith('корь')
     expect(onSubmit).toHaveBeenCalledTimes(1)
   })
-  it('opens the dropdown when query + results are provided (from first letter)', async () => {
+
+  // Дропдаун больше не открывается сам при маунте (даже с непустым defaultValue) —
+  // только по фокусу инпута, см. onFocus в SearchBar. Поэтому здесь явно кликаем в инпут.
+  it('opens the dropdown on focus when query + results are provided (from first letter)', async () => {
     render(<SearchBar defaultValue="б" results={mockResults} />)
+    await userEvent.click(getInput())
     await waitFor(() => {
       expect(document.body).toHaveTextContent('Вакцины')
       expect(document.body).toHaveTextContent('Бактривир')
     })
   })
 
-  it('shows empty dropdown state when results array is empty', () => {
+  it('does not open the dropdown on mount, even with a prefilled query', () => {
+    render(<SearchBar defaultValue="б" results={mockResults} />)
+    expect(screen.queryByText('Бактривир')).not.toBeInTheDocument()
+  })
+
+  it('shows empty dropdown state when results array is empty', async () => {
     render(<SearchBar defaultValue="б" results={[]} />)
-    expect(document.body).toHaveTextContent('Ничего не найдено')
+    await userEvent.click(getInput())
+    await waitFor(() => expect(document.body).toHaveTextContent('Ничего не найдено'))
   })
 
   it('opens the dropdown with a spinner when isLoading=true', async () => {
     render(<SearchBar defaultValue="б" isLoading />)
+    await userEvent.click(getInput())
     await waitFor(() => {
       expect(document.body.querySelector('[role="status"]')).toBeInTheDocument()
     })
@@ -154,6 +166,7 @@ describe('SearchBar', () => {
   it('calls onSelect when a chip in the dropdown is clicked', async () => {
     const onSelect = vi.fn()
     render(<SearchBar defaultValue="б" results={mockResults} onSelect={onSelect} />)
+    await userEvent.click(getInput())
     await waitFor(() => expect(document.body).toHaveTextContent('Бактривир'))
     const chip = screen.getAllByRole('option').find((el) => el.textContent === 'Бактривир')
     expect(chip).toBeDefined()
