@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.3...v1.13.4) (2026-08-12)
+
+
+### Bug Fixes
+
+* **DataTableRow:** improve click handling logic and accessibility ([840b99a](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/840b99a24d4e5062b699e35f600362694b359556))
+
 ## [1.13.3](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.2...v1.13.3) (2026-08-11)
 
 
