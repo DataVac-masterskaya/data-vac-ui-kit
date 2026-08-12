@@ -79,9 +79,19 @@ export { DataTable } from './components/DataTable'
 export type { DataTableColumn, DataTableProps } from './components/DataTable'
 
 // AlphabetFilter
-export { AlphabetFilter } from './components/AlphabetFilter';
-export type { AlphabetFilterProps } from './components/AlphabetFilter';
+export { AlphabetFilter } from './components/AlphabetFilter'
+export type { AlphabetFilterProps } from './components/AlphabetFilter'
 
 // ScrollToTopButton
 export { ScrollToTopButton } from './components/ScrollToTopButton'
 export type { ScrollToTopButtonProps } from './components/ScrollToTopButton'
+
+// Pagination
+export { Pagination, usePagination } from './components/Pagination'
+export type {
+  PaginatedResponse,
+  PaginationMode,
+  PaginationProps,
+  UsePaginationOptions,
+  UsePaginationResult,
+} from './components/Pagination'

@@ -7,6 +7,20 @@ global.ResizeObserver = class ResizeObserver {
   disconnect() {}
 }
 
+// Polyfill IntersectionObserver for jsdom
+class IntersectionObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords(): IntersectionObserverEntry[] {
+    return []
+  }
+  root = null
+  rootMargin = ''
+  thresholds = []
+}
+global.IntersectionObserver = IntersectionObserverMock
+
 // Polyfill window.matchMedia for jsdom
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
