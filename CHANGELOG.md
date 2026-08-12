@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.4...v1.14.0) (2026-08-12)
+
+
+### Bug Fixes
+
+* **SearchBar:** update dropdown behavior to open on input focus and improve test cases ([7750cba](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/7750cba6960b7b1b15c43ce245279f60bc21b13c))
+
+
+### Features
+
+* **Pagination:** implement pagination component with pages and scroll modes ([72a38c7](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/72a38c77b1e887767603b6b4d28ce71a88a6daa9))
+
 ## [1.13.4](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.3...v1.13.4) (2026-08-12)
 
 
