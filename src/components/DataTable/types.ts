@@ -20,6 +20,11 @@ export type DesktopBreakpoint = 'md' | 'lg'
 export interface DataTableColumn<T = Record<string, unknown>> {
   key: string
   label: string
+  /**
+   * Кастомный контент заголовка колонки (только desktop-шапка).
+   * Если задан — рендерится вместо label в шапке; label остаётся строкой для карточек планшета/мобильного.
+   */
+  headerLabel?: ReactNode
   /** Для отображения с верным склонением в выпадающем Select-компоненте */
   sortLabel?: string
   /** Фиксированная ширина колонки в px или любая CSS-строка */

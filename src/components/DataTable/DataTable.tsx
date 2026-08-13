@@ -87,7 +87,9 @@ export function DataTable<T = Record<string, unknown>>({
               minWidth: 0,
             }}
           >
-            {col.sortable && onSortChange ? (
+            {col.headerLabel ? (
+              col.headerLabel
+            ) : col.sortable && onSortChange ? (
               <span className="flex items-center gap-1">
                 <SortControl
                   label={col.label}
