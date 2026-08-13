@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.14.0...v1.15.0) (2026-08-13)
+
+
+### Features
+
+* **DataTable:** add headerLabel prop for custom column header content ([2436195](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/2436195cf14e88aa404eb3bbea4c5797fa25003f))
+
 # [1.14.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.13.4...v1.14.0) (2026-08-12)
 
 
