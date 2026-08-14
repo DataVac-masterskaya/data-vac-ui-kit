@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.15.0...v1.16.0) (2026-08-14)
+
+
+### Features
+
+* **DataTable:** enhance headerLabel with tooltip support for better user experience ([e172181](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/e17218132d876787dde9644189c164a6d01b1c93))
+
 # [1.15.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.14.0...v1.15.0) (2026-08-13)
 
 
