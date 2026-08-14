@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.16.0...v1.16.1) (2026-08-14)
+
+
+### Bug Fixes
+
+* **DataTable:** simplify headerLabel rendering by removing tooltip logic ([84d209f](https://github.com/DataVac-masterskaya/data-vac-ui-kit/commit/84d209f31d032cc2886eff97662fc71516480155))
+
 # [1.16.0](https://github.com/DataVac-masterskaya/data-vac-ui-kit/compare/v1.15.0...v1.16.0) (2026-08-14)
 
 
