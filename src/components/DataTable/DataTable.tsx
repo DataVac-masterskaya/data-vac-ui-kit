@@ -88,7 +88,16 @@ export function DataTable<T = Record<string, unknown>>({
             }}
           >
             {col.headerLabel ? (
-              col.headerLabel
+              <span className="flex items-center gap-1">
+                {col.headerLabel}
+                {col.tooltip && (
+                  <Tooltip content={col.tooltip}>
+                    <span className="flex items-center cursor-help text-fg-secondary hover:text-accent transition-colors">
+                      <InfoCircleIcon width={12} height={12} />
+                    </span>
+                  </Tooltip>
+                )}
+              </span>
             ) : col.sortable && onSortChange ? (
               <span className="flex items-center gap-1">
                 <SortControl
